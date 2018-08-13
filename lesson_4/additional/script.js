@@ -1,8 +1,8 @@
 function getFriendlyNumbers(start, end) {
 
-	let arrResult = [];
+	
 	//Проверка аргументов 
-	if (( typeof(start) === 'number' && typeof(end) === 'number' ) && (start < end) && ( start > 0 && end > 0) && (start % 1 === 0) && (end % 1 === 0) ) {
+	if ((typeof (start) === 'number' && typeof (end) === 'number') &&  (start > 0 && end > 0) && !(start > end)  &&  (start % 1 === 0) && (end % 1 === 0)) {
 		
 			//сумма делителей числа
 			function getDelitelSum(num) {
@@ -16,7 +16,8 @@ function getFriendlyNumbers(start, end) {
 				return sum;
 			};
 
-	//Проверка на дружественные числа		
+	//Проверка на дружественные числа	
+	let arrResult = [];	
 	let tempSum;
 
 	for (let i = start; i <= end; i++) {
@@ -31,8 +32,9 @@ function getFriendlyNumbers(start, end) {
 			arrResult.push(arr);
 		}
 	}
-	  console.log(arrResult);
-		return arrResult;	
+					
+		console.log(arrResult);
+		return arrResult;
 
 	} else {
 		return false;
@@ -41,5 +43,6 @@ function getFriendlyNumbers(start, end) {
 
 
  getFriendlyNumbers(1, 1);
+ getFriendlyNumbers(1, 100);
  getFriendlyNumbers(1, 500);
  getFriendlyNumbers(1, 1200);
