@@ -151,6 +151,7 @@ btnHireEmployers.addEventListener('click', () => {
 				mainList.employers[i] = a;
 				employersValue.textContent += mainList.employers[i] + '  ';
 			} else {
+
 				console.log('Только русские буквы!');
 			}
 		}
@@ -194,12 +195,20 @@ function btnDisable() {
 
 //отмена запрета кнопки при фокусе на поле ввода
 for (let i = 0; i < hireEmployers.length; i++) {
+
 	hireEmployers[i].addEventListener('focus', () => {
 		btnHireEmployers.disabled = false;
-		hireEmployers[i].value = '';
+	});
 
+	//Запрет на ввод не кирилических символов
+	hireEmployers[i].addEventListener('keyup', () => {
+		let a = hireEmployers[i].value;
+		if (!(/^[А-ЯЁ]{1}([а-яё]{0,22})?$/.test(a))) {
+			hireEmployers[i].value = '';
+		}
 
 	});
+
 };
 for (let i = 0; i < goods.length; i++) {
 	goods[i].addEventListener('focus', () => {
