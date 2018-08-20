@@ -1,0 +1,22 @@
+.container {
+	margin: 0 auto;
+	width: 400px;
+	height: 400px;
+}
+.timer {
+	text-align: center;
+}
+.clock {
+	font-size: 60px;
+	padding: 50px 0;
+}
+button {
+	border-radius: 10px;
+	background-color: aquamarine;
+	font-weight: bold;
+	padding: 10px;
+	cursor: pointer;
+}
+#start {
+	margin-right: 20px;
+}
