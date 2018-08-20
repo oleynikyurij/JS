@@ -24,7 +24,6 @@ start.addEventListener('click', () => {
 			countLF += 1;
 		}
 		if (countUP === 380) {
-
 			rocket.classList.add('turn45');
 		}
 
@@ -41,8 +40,7 @@ start.addEventListener('click', () => {
 			countLF = parseInt(rocket.style.left);
 			start.disabled = false;
 		}
-
-
 	});
 
 });
+

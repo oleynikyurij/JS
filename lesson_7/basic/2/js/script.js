@@ -15,12 +15,14 @@ clearInterval(timerID);
 //запуск таймера
 start.addEventListener('click', ()=> {
 	timerID = setInterval(timer, 1000);
+	start.disabled = true;
 
 });
 //сброс и остановка таймера
 stop.addEventListener('click', ()=> {
 	clearInterval(timerID);
 	initTimer();
+	start.disabled = false;
 });
 
 
