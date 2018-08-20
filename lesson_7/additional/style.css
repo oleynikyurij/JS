@@ -1,0 +1,47 @@
+.container {
+	background-image: url(space.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 1000px;
+	height: 500px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.rocket {
+	position: absolute;
+	bottom: 13px;
+	left: 0;
+	transform: rotate(-45deg);
+	transition: transform 0.5s ease;
+}
+
+.turn {
+	transform: rotate(0);
+	transition: transform 0.5s ease;
+}
+
+.turn45 {
+	transform: rotate(45deg);
+	transition: transform 0.5s ease;
+}
+
+.start {
+	position: absolute;
+	bottom: 20px;
+	left: 450px;
+	display: block;
+	cursor: pointer;
+	border: 2px solid bisque;
+	border-radius: 40px;
+	background-color: transparent;
+	text-decoration: none;
+	padding: 7px 15px;
+	color: bisque;
+	transition: all 0.5s ease-in;
+}
+
+.start:hover {
+	color: skyblue;
+	border-color: skyblue;
+}
