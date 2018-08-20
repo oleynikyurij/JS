@@ -37,8 +37,8 @@ start.addEventListener('click', () => {
 			rocket.style.bottom = 13 + 'px';
 			rocket.classList.remove('turn45');
 			rocket.classList.remove('turn');
-			countUP = parseInt(getComputedStyle(rocket).bottom),
-			countLF = parseInt(getComputedStyle(rocket).left);
+			countUP = parseInt(rocket.style.bottom),
+			countLF = parseInt(rocket.style.left);
 			start.disabled = false;
 		}
 
