@@ -1,0 +1,52 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+div {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	border: 2px solid red;
+}
+
+header {
+	padding: 15px 0;
+	top: 0;
+	width: 100%;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	width: 900px;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+	padding: 5px 15px;
+	border: 1px solid blueviolet;
+	border-radius: 15px 5px;
+	cursor: pointer;
+	transition: all 0.4s;
+}
+
+a:hover {
+	background-color: rgb(16, 176, 240);
+	color: azure;
+	border-color: azure;
+}
+.top {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	color: red;
+	line-height: 50px;
+	padding-left: 15px;
+	cursor: pointer;
+}
