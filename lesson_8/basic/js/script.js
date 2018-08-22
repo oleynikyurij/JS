@@ -101,9 +101,6 @@ window.addEventListener('DOMContentLoaded', function () {
 					} 
 				};
 				updateClock();
-
-
-
 	 }
 
  setClock('timer', deadLine);
