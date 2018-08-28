@@ -194,11 +194,82 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 	//обработчик на отправку формы модального окна
-	form.addEventListener('submit', submitForm(form, input));
+	// form.addEventListener('submit', submitForm(form, input));
+	form.addEventListener('submit', function  (event) {
+		event.preventDefault();
+		form.appendChild(statusMessage);
+		
+		//AJAX
+		//создаём новый запрос
+		let request = new XMLHttpRequest();
+		//настраиваем запрос
+		request.open("POST", "server.php");
+		//устанавливаем кодировку
+		request.setRequestHeader("Content-Type", "application/x-www-form-urlencode");
+		//подготавливаем данные для отправки через FormData
+		let formData = new FormData(form);
+		//отправляем форму
+		request.send(formData);
+
+		//проверка ответа сервера и соответствующие действия
+		request.onreadystatechange = () => {
+			if (request.readyState < 4) {
+				statusMessage.innerHTML = message.loading;
+			} else if (request.readyState === 4) {
+				if (request.status === 200 && request.status < 300) {
+					statusMessage.innerHTML = message.success;
+					//добавляем контент на страницу
+				} else {
+					statusMessage.innerHTML = message.failure;
+				}
+			}
+		};
+		
+		//очистка полей формы
+		for (let i = 0; i < input.length; i++) {
+			input[i].value = '';
+			
+		}
+	});
 
 	//обработчик на отправку формы контактов
-	formId.addEventListener('submit', submitForm(formId, inputId));
+	formId.addEventListener('submit', function (event) {
+		event.preventDefault();
+		formId.appendChild(statusMessage);
 
 
+		//AJAX
+		//создаём новый запрос
+		let request = new XMLHttpRequest();
+		//настраиваем запрос
+		request.open("POST", "server.php");
+		//устанавливаем кодировку
+		request.setRequestHeader("Content-Type", "application/x-www-form-urlencode");
+		//подготавливаем данные для отправки через FormData
+		let formData = new FormData(formId);
+		//отправляем форму
+		request.send(formData);
+
+		//проверка ответа сервера и соответствующие действия
+		request.onreadystatechange = () => {
+			if (request.readyState < 4) {
+				statusMessage.innerHTML = message.loading;
+			} else if (request.readyState === 4) {
+				if (request.status === 200 && request.status < 300) {
+					statusMessage.innerHTML = message.success;
+					
+					//добавляем контент на страницу
+				} else {
+					statusMessage.innerHTML = message.failure;
+				}
+			}
+		};
+		
+		//очистка полей формы
+		for (let i = 0; i < inputId.length; i++) {
+			inputId[i].value = '';
+			
+		}
+	});
 
 });
