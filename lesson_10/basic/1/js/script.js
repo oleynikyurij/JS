@@ -1,12 +1,12 @@
 'use strict';
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('DOMContentLoaded', ()=> {
 
 	let infoHeader = document.getElementsByClassName('info-header')[0],
 		infoHeaderTab = document.getElementsByClassName('info-header-tab'),
 		infoTabcontent = document.getElementsByClassName('info-tabcontent');
 
 	//скрываем  табы
-	function hideTabs(a) {
+	let hideTabs =  (a)=> {
 		for (let i = a; i < infoTabcontent.length; i++) {
 			infoTabcontent[i].classList.remove('show');
 			infoTabcontent[i].classList.add('hide');
@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	hideTabs(1);
 
 	//отобразить таб
-	function showTab(b) {
+	let showTab = (b)=> {
 		if (infoTabcontent[b].classList.contains('hide')) {
 			hideTabs(0);
 			infoTabcontent[b].classList.remove('hide');
@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	}
 
 	//обработчик на родительский класс
-	infoHeader.addEventListener('click', function (event) {
+	infoHeader.addEventListener('click', (event)=> {
 		let target = event.target;
 		//проверяем событие на элементе
 		if (target.className === 'info-header-tab') {
@@ -49,11 +49,11 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	//время до окончания
 	//  let deadLine = '2017-09-22';
-	let deadLine = '2018-08-28';
+	let deadLine = '2018-08-29';
 
 
 	//вычисление оставшегося времени
-	function getTimeRemaining(endtime) {
+	let getTimeRemaining = (endtime)=> {
 		let t = Date.parse(deadLine) - Date.parse(new Date()),
 			seconds = Math.floor((t / 1000) % 60),
 			minutes = Math.floor((t / 1000 / 60) % 60),
@@ -81,14 +81,14 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 
-	function setClock(id, endtime) {
+	let setClock = (id, endtime)=> {
 
 		let timer = document.getElementById(id),
 			hours = timer.querySelector('.hours'),
 			minutes = timer.querySelector('.minutes'),
 			seconds = timer.querySelector('.seconds');
 		//обновление таймера
-		function updateClock() {
+		let updateClock = ()=> {
 			let t = getTimeRemaining(endtime);
 			hours.innerHTML = t.hours;
 			minutes.innerHTML = t.minutes;
