@@ -186,8 +186,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 		//очистка полей формы
 		for (let i = 0; i < inpt.length; i++) {
-			inpt[i].value = 'qqqq';
-			console.log(inpt[i]);
+			inpt[i].value = '';
+			
 		}
 	
 	};
