@@ -342,7 +342,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	let reg = /\D/g;
 //обработчмк на ввод 
-	persons.addEventListener('change', function () {
+	persons.addEventListener('input', function () {
 		//получаем значение и приводим к числу
 		personSum = +this.value;
 		//проверка на "не число"
@@ -361,7 +361,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	restDays.addEventListener('change', function () {
+	restDays.addEventListener('input', function () {
 		daysSum = +this.value;
 
 		if (this.value.match(reg)) {
