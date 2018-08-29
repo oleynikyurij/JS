@@ -151,46 +151,52 @@ window.addEventListener('DOMContentLoaded', () => {
 		inputId = formId.getElementsByTagName('input'),
 		statusMessage = document.createElement('div');
 	statusMessage.classList.add('status');
+	//создаём элемент img
+	let pict = document.createElement("img");
 
 	//функционал отправки формы
-	let submitForm = (elemForm, inpt) => {
-		e.preventDefault();
-		elemForm.appendChild(statusMessage);
+	// let submitForm = (elemForm, inpt)=> {
+	// 	e.preventDefault();
+	// 	elemForm.appendChild(statusMessage);
 
 
-		//AJAX
-		//создаём новый запрос
-		let request = new XMLHttpRequest();
-		//настраиваем запрос
-		request.open("POST", "server.php");
-		//устанавливаем кодировку
-		request.setRequestHeader("Content-Type", "application/x-www-form-urlencode");
-		//подготавливаем данные для отправки через FormData
-		let formData = new FormData(elemForm);
-		//отправляем форму
-		request.send(formData);
+	// 	//AJAX
+	// 	//создаём новый запрос
+	// 	let request = new XMLHttpRequest();
+	// 	//настраиваем запрос
+	// 	request.open("POST", "server.php");
+	// 	//устанавливаем кодировку
+	// 	request.setRequestHeader("Content-Type", "application/x-www-form-urlencode");
+	// 	//подготавливаем данные для отправки через FormData
+	// 	let formData = new FormData(elemForm);
+	// 	//отправляем форму
+	// 	request.send(formData);
 
-		//проверка ответа сервера и соответствующие действия
-		request.onreadystatechange = () => {
-			if (request.readyState < 4) {
-				statusMessage.innerHTML = message.loading;
-			} else if (request.readyState === 4) {
-				if (request.status === 200 && request.status < 300) {
-					statusMessage.innerHTML = message.success;
-					//добавляем контент на страницу
-				} else {
-					statusMessage.innerHTML = message.failure;
-				}
-			}
-		}
+	// 	//проверка ответа сервера и соответствующие действия
+	// 	request.onreadystatechange = () => {
+	// 		if (request.readyState < 4) {
 
-		//очистка полей формы
-		for (let i = 0; i < inpt.length; i++) {
-			inpt[i].value = '';
+	// 			pict.src = "img/ajax-loader.gif";
+	// 			statusMessage.appendChild(pict);
 
-		}
+	// 		} else if (request.readyState === 4) {
+	// 			if (request.status === 200 && request.status < 300) {
+	// 				statusMessage.appendChild(pict);
+	// 				//добавляем контент на страницу
+	// 			} else {
+	// 				//можно взять другую картинку
+	// 				statusMessage.appendChild(pict);
+	// 			}
+	// 		}
+	// 	}
 
-	};
+	// 	//очистка полей формы
+	// 	for (let i = 0; i < inpt.length; i++) {
+	// 		inpt[i].value = '';
+
+	// 	}
+	// 	statusMessage.removeChild(pict);
+	// };
 
 
 	//обработчик на отправку формы модального окна
@@ -214,13 +220,16 @@ window.addEventListener('DOMContentLoaded', () => {
 		//проверка ответа сервера и соответствующие действия
 		request.onreadystatechange = () => {
 			if (request.readyState < 4) {
-				statusMessage.innerHTML = message.loading;
+
+				pict.src = "img/ajax-loader.gif";
+				statusMessage.appendChild(pict);
+
 			} else if (request.readyState === 4) {
 				if (request.status === 200 && request.status < 300) {
-					statusMessage.innerHTML = message.success;
+					statusMessage.appendChild(pict);
 					//добавляем контент на страницу
 				} else {
-					statusMessage.innerHTML = message.failure;
+					statusMessage.appendChild(pict);
 				}
 			}
 		};
@@ -230,6 +239,10 @@ window.addEventListener('DOMContentLoaded', () => {
 			input[i].value = '';
 
 		}
+		setTimeout(() => {
+			form.removeChild(statusMessage);
+		}, 3000);
+
 	});
 
 	//обработчик на отправку формы контактов
@@ -253,14 +266,17 @@ window.addEventListener('DOMContentLoaded', () => {
 		//проверка ответа сервера и соответствующие действия
 		request.onreadystatechange = () => {
 			if (request.readyState < 4) {
-				statusMessage.innerHTML = message.loading;
+
+				pict.src = "img/ajax-loader.gif";
+				statusMessage.appendChild(pict);
+
 			} else if (request.readyState === 4) {
 				if (request.status === 200 && request.status < 300) {
-					statusMessage.innerHTML = message.success;
 
+					statusMessage.appendChild(pict);
 					//добавляем контент на страницу
 				} else {
-					statusMessage.innerHTML = message.failure;
+					statusMessage.appendChild(pict);
 				}
 			}
 		};
@@ -270,6 +286,9 @@ window.addEventListener('DOMContentLoaded', () => {
 			inputId[i].value = '';
 
 		}
+		setTimeout(() => {
+			form.removeChild(statusMessage);
+		}, 3000);
 	});
 
 	//Слайдер 
@@ -404,6 +423,8 @@ window.addEventListener('DOMContentLoaded', () => {
 		}, 1);
 	};
 
+
+
 //Плавная прокрутка
 	function animate(draw, duration) {
 
@@ -439,6 +460,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 			window.scrollBy(0, section.getBoundingClientRect().top / 20 );
 		}, 1500 );
+
+
 
 
 	});

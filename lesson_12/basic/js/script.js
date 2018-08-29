@@ -385,7 +385,44 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	
+	//Плавная прокрутка
+	function animate(draw, duration) {
+		//время старта анимации
+		let start = performance.now();
+
+		requestAnimationFrame( function animate(time) {
+			
+			let timePassed = time - start;
+
+			if ( timePassed > duration) {
+				timePassed = duration;
+			}
+
+			draw( timePassed );
+
+			if ( timePassed < duration ) {
+				requestAnimationFrame(animate);
+			}
+
+		});
+	};
+
+	let navigation = document.querySelector('nav');
+	//обработчик на 
+	navigation.addEventListener('click', (e)=> {
+		e.preventDefault();
+
+		//описываем анимацию
+		animate( (timePassed)=> {
+			let target = e.target;
+			//получаем элемент на который указывает ссылка в меню
+			let section = document.getElementById(target.getAttribute('href').slice(1));
+			//прокручиваем страницу к определённому боку
+			window.scrollBy(0, section.getBoundingClientRect().top / 20 );
+		}, 1500 );
+
+
+	});
 
 
 });
