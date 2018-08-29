@@ -299,6 +299,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 
 		slides[slideIndex - 1].style.display = 'block';
+		//добавляем анимацию на слайд
 		slides[slideIndex - 1].classList.add('animated', 'flip');
 		// slides[slideIndex - 1].style.cssText = 'display:block; '
 		dots[slideIndex - 1].classList.add('dot-active');
