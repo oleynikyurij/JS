@@ -280,9 +280,8 @@ window.addEventListener('DOMContentLoaded', () => {
 		dotsWrap = document.querySelector('.slider-dots'),
 		dots = document.getElementsByClassName('dot');
 
-	showSlides(slideIndex);
-
-	function showSlides(n) {
+	
+	let showSlides = (n)=> {
 		if (n > slides.length) {
 			slideIndex = 1;
 		}
@@ -302,25 +301,27 @@ window.addEventListener('DOMContentLoaded', () => {
 		dots[slideIndex - 1].classList.add('dot-active');
 
 
-	}
+	};
 
-	function plusSlides(n) {
+	showSlides(slideIndex);
+
+	let plusSlides = (n)=> {
 		showSlides(slideIndex += n);
 	};
 
-	function currentSlide(n) {
+	let currentSlide = (n)=> {
 		showSlides(slideIndex = n);
 	};
 
-	prev.addEventListener('click', function () {
+	prev.addEventListener('click', ()=> {
 		plusSlides(-1);
 	});
-	next.addEventListener('click', function () {
+	next.addEventListener('click', ()=> {
 		plusSlides(1);
 	});
 
 
-	dotsWrap.addEventListener('click', function (e) {
+	dotsWrap.addEventListener('click', (e)=> {
 		for (let i = 0; i <= dots.length; i++) {
 			if (e.target.classList.contains('dot') && e.target == dots[i - 1]) {
 				currentSlide(i);
@@ -351,7 +352,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			this.value = '';
 			totalValue.innerHTML = 0;
 			//проверка на пустые поля в обоих формах
-		} else if (persons.value == '' || restDays.value == '') {
+		} else if (persons.value == '' || restDays.value == '' || persons.value == 0 || restDays.value == 0) {
 			totalValue.innerHTML = 0;
 		} else {
 			//вычисление результата
@@ -367,7 +368,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		if (this.value.match(reg)) {
 			this.value = '';
 			totalValue.innerHTML = 0;
-		} else if (restDays.value == '' || persons.value == '') {
+		} else if (restDays.value == '' || persons.value == '' || restDays.value == 0 || persons.value == 0 ) {
 			totalValue.innerHTML = 0;
 		} else {
 			total = (daysSum + personSum) * 4000;

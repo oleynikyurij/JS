@@ -299,45 +299,44 @@ window.addEventListener('DOMContentLoaded', () => {
 		dotsWrap = document.querySelector('.slider-dots'),
 		dots = document.getElementsByClassName('dot');
 
-	showSlides(slideIndex);
-
-	function showSlides(n) {
-		if (n > slides.length) {
-			slideIndex = 1;
+		
+		let showSlides = (n)=> {
+			if (n > slides.length) {
+				slideIndex = 1;
+			}
+			if (n < 1) {
+				slideIndex = slides.length;
+			}
+			
+			for (let i = 0; i < slides.length; i++) {
+				slides[i].style.display = 'none';
+			}
+			
+			for (let i = 0; i < dots.length; i++) {
+				dots[i].classList.remove('dot-active');
+			}
+			
+			slides[slideIndex - 1].style.display = 'block';
+			//добавляем анимацию на слайд
+			slides[slideIndex - 1].classList.add('animated', 'flip');
+			// slides[slideIndex - 1].style.cssText = 'display:block; '
+			dots[slideIndex - 1].classList.add('dot-active');
+			
 		}
-		if (n < 1) {
-			slideIndex = slides.length;
-		}
-
-		for (let i = 0; i < slides.length; i++) {
-			slides[i].style.display = 'none';
-		}
-
-		for (let i = 0; i < dots.length; i++) {
-			dots[i].classList.remove('dot-active');
-		}
-
-		slides[slideIndex - 1].style.display = 'block';
-		//добавляем анимацию на слайд
-		slides[slideIndex - 1].classList.add('animated', 'flip');
-		// slides[slideIndex - 1].style.cssText = 'display:block; '
-		dots[slideIndex - 1].classList.add('dot-active');
-
-
-	}
-
-	function plusSlides(n) {
+		showSlides(slideIndex);
+		
+		let plusSlides = (n)=> {
 		showSlides(slideIndex += n);
 	};
 
-	function currentSlide(n) {
+	let currentSlide = (n)=> {
 		showSlides(slideIndex = n);
 	};
 
-	prev.addEventListener('click', function () {
+	prev.addEventListener('click', ()=> {
 		plusSlides(-1);
 	});
-	next.addEventListener('click', function () {
+	next.addEventListener('click', ()=> {
 		plusSlides(1);
 	});
 
@@ -392,7 +391,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		if (this.value.match(reg)) {
 			this.value = '';
 			totalValue.innerHTML = 0;
-		} else if (restDays.value == '' || persons.value == '') {
+		} else if (persons.value == '' || restDays.value == '' || persons.value == 0 || restDays.value == 0) {
 			totalValue.innerHTML = 0;
 		} else {
 			place.selectedIndex = 0;
@@ -403,7 +402,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 	//проверка select
 	place.addEventListener('change', function () {
-		if (restDays.value == '' || restDays.value == '0' || persons.value == '' || persons.value == '0') {
+		if (persons.value == '' || restDays.value == '' || persons.value == 0 || restDays.value == 0) {
 			totalValue.innerHTML = 0;
 		} else {
 			let a = total;
