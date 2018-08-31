@@ -26,9 +26,17 @@ let conf = {
 									}
 			}
 		]
-	}
+	},
+	//карта сайта для режима отладки
+	devtool: 'eval-sourcemap'
 };
 
 
 
-module.exports = conf;
+module.exports = (env, options)=> {
+//меняем devtool в зависимости от dev  или production
+	let production = options.mode === 'production';
+
+	conf.devtool = production ? 'source-map' : 'eval-sourcemap';
+	return conf;
+} ;
