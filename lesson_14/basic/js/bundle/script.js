@@ -1,14 +1,15 @@
 'use strict';
-window.addEventListener('DOMContentLoaded', () => {
+
+window.addEventListener('DOMContentLoaded', function () {
 	//подключаем модули
-	let tab = require('../parts/tab.js');
-	let timer = require('../parts/timer.js');
-	let modal = require('../parts/modal.js');
-	let form = require('../parts/form.js');
-	let slider = require('../parts/slider.js');
-	let calc = require('../parts/calc.js');
-	let scroll = require('../parts/scroll.js');
-	
+	var tab = require('../parts/tab.js');
+	var timer = require('../parts/timer.js');
+	var modal = require('../parts/modal.js');
+	var form = require('../parts/form.js');
+	var slider = require('../parts/slider.js');
+	var calc = require('../parts/calc.js');
+	var scroll = require('../parts/scroll.js');
+
 	//вызываем модули
 	tab();
 	timer();
@@ -17,6 +18,4 @@ window.addEventListener('DOMContentLoaded', () => {
 	slider();
 	calc();
 	scroll();
-
-
 });

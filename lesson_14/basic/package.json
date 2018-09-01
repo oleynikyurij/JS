@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"compile": "babel --presets es2015 -d js/ js/bundle"
+		"compile": "babel --presets es2015 -d js/bundle js/bundle"
 		
   },
   "author": "",
