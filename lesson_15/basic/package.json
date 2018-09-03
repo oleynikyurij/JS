@@ -1,17 +1,19 @@
 {
-  "name": "lesson_14",
+  "name": "basic",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"compile": "babel --presets es2015 -d js/bundle js/bundle"
-		
-	},
+		"jest": "jest"
+  },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2"
+  },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1"
+    "jest": "^23.5.0",
+    "mocha": "^5.2.0"
   }
 }
