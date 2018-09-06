@@ -4,9 +4,12 @@ function tarif() {
 	let jsOverlayForm = document.querySelector('.js-overlay-thank-you'),
 		close = document.querySelector('.js-overlay-popup .popup-close'),
 		pricing = document.querySelector('.pricing'),
-		cansel = document.getElementsByClassName('button popup-form__btn_2 popup-form__btn-js')[0];
+		canselBtn = document.getElementsByClassName('button popup-form__btn_2 popup-form__btn-js')[0],
+		gold = document.getElementById('gold'),
+		silver = document.getElementById('silver'),
+		basic = document.getElementById('basic');
 
-		console.log(cansel);
+		
 
 	//создаём обработчик на родительский блок
 	pricing.addEventListener('click', function (e) {
@@ -27,8 +30,8 @@ function tarif() {
 	});
 
 	//обработчик на элементы для закрытия окна
-	jsOverlayForm.addEventListener('click', ()=> {
-		if (event.target === jsOverlayForm || event.target === cansel || event.target === close) {
+	jsOverlayForm.addEventListener('click', (event)=> {
+		if (event.target === jsOverlayForm || event.target === canselBtn || event.target === close) {
 			jsOverlayForm.style.display = "none";
 		}
 	});

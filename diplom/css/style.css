@@ -800,17 +800,17 @@ input:focus, button:focus, .form-box-text__massege:focus, .slick-slide:focus, .s
 	background-color: #fff;
 	cursor: pointer;
 	position: relative;
-	transition: background-color 0.5s ease-out;
+	transition: background-color 1.5s ease-out;
 }
 .dot__active {
 	background-color: pink;
 }
-.dot__active::before {
+/* .dot__active::before {
 	position: absolute;
 	content: '\2713';
 	left: 4px;
   top: 1px;
-}
+} */
 
 .slider .slick-dots {
   width: 70px;

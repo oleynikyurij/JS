@@ -21,7 +21,7 @@ function modalOpen() {
 			// 	overlay.style.display = "none";
 			// });
 			//закрытие формы при клике по подложке или кнопке "закрыть"
-			overlay.addEventListener('click', ()=> {
+			overlay.addEventListener('click', (event)=> {
 				//определяем "подложку"
 				if ( event.target === overlay || event.target === close ) {
 					overlay.style.display = "none";

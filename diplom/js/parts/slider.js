@@ -5,7 +5,7 @@ function slider() {
 	let slideIndex = 1,
 		slides = document.getElementsByClassName('a-slide'),
 		dotsWrap = document.querySelector('.slider-dots'),
-		dots = document.getElementsByClassName('dot');;
+		dots = document.getElementsByClassName('dot');
 	//функция показа слайдов
 	let showSlides = (n) => {
 		if (n > slides.length) {

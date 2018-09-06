@@ -11,8 +11,13 @@ window.addEventListener('DOMContentLoaded', () => {
 	slider();
 	modalOpen();
 	tarif();
+ let elem = document.getElementsByClassName('header-button__main button button__big')[0];
+ console.log(elem);
+	elem.onclick = ()=> {
+		document.location.href = "site-builder.php";
+};
 
-	console.log('ghddpkkl');
+	
 
 
 });
