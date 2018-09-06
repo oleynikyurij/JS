@@ -28,8 +28,8 @@ function slider() {
 		slides[slideIndex - 1].classList.add('animated', 'fadeIn');
 		//делаем соответствующую точку активной
 		dots[slideIndex - 1].classList.add('dot__active');
-	}
-  //функция отображения заданного слайда
+	};
+	//функция отображения заданного слайда
 	let currentSlide = (n) => {
 		showSlides(slideIndex = n);
 	};
@@ -50,4 +50,4 @@ function slider() {
 			}
 		}
 	});
-};
+}

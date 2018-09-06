@@ -13,6 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	tarif();
  let elem = document.getElementsByClassName('header-button__main button button__big')[0];
  console.log(elem);
+ elem.setAttribute('type', 'application/x-httpd-php')
 	elem.onclick = ()=> {
 		document.location.href = "site-builder.php";
 };
