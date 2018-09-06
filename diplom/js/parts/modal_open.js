@@ -17,13 +17,13 @@ function modalOpen() {
 				overlay.style.display = "block";
 			});
 
-			close.addEventListener('click', ()=> {
-				overlay.style.display = "none";
-			});
-			//закрытие формы при клике по подложке
+			// close.addEventListener('click', ()=> {
+			// 	overlay.style.display = "none";
+			// });
+			//закрытие формы при клике по подложке или кнопке "закрыть"
 			overlay.addEventListener('click', ()=> {
 				//определяем "подложку"
-				if ( event.target === overlay) {
+				if ( event.target === overlay || event.target === close ) {
 					overlay.style.display = "none";
 				}
 			});
