@@ -7,7 +7,8 @@ let conf = {
 	output: {
 		path: path.resolve(__dirname,'./js/bundle/'),
 		//имя результирующего файла
-		filename: 'bundle.js'
+		filename: 'bundle.js',
+		publicPath: 'js/bundle/'
 	}, 
 	devServer: {
 		//отображение ошибок на экране
