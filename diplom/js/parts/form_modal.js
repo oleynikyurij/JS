@@ -122,10 +122,10 @@ btnSend.addEventListener('submit', function (event) {
 		form.value = '';
 
 	}
-	// setTimeout(() => {
-	// 	document.querySelector('.popup-form-alert').style.display = 'none';
-	// 	document.querySelector('.popup-form-error').style.display = 'none';
-	// }, 3000);
+	setTimeout(() => {
+		document.querySelector('. js-overlay-order').style.display = 'none';
+		
+	}, 3000);
 });
 
 }
