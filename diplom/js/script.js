@@ -7,6 +7,7 @@ import transitionPage from './parts/transition_page';
 import smoothScrolling from './parts/smooth_scrolling';
 import authorizationForm from './parts/authorization_form';
 import formModal from './parts/form_modal';
+import mainForm from './parts/main_form';
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -19,6 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	smoothScrolling();
 	authorizationForm();
 	formModal();
+	mainForm();
 	
 	
 
