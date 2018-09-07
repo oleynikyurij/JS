@@ -4298,3 +4298,6 @@ svg:active {
 .popup-form-alert p, .popup-form-error p, .form-group-alert p, .form-group-error p {
 	text-align: center;
 }
+.not-before::before {
+	display: none;
+}

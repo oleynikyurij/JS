@@ -8,6 +8,7 @@ import smoothScrolling from './parts/smooth_scrolling';
 import authorizationForm from './parts/authorization_form';
 import formModal from './parts/form_modal';
 import mainForm from './parts/main_form';
+import videoPlayer from './parts/video';
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -21,6 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	authorizationForm();
 	formModal();
 	mainForm();
+	videoPlayer();
 	
 	
 
