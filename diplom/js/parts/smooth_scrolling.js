@@ -8,7 +8,7 @@ function smoothScrolling() {
 		requestAnimationFrame(function animate(time) {
 
 			let timePassed = time - start;
-
+			console.log(timePassed);
 			if (timePassed > duration) {
 				timePassed = duration;
 			}
@@ -17,7 +17,7 @@ function smoothScrolling() {
 
 			if (timePassed < duration) {
 				requestAnimationFrame(animate);
-			}
+			} 
 
 		});
 	};
@@ -28,13 +28,16 @@ function smoothScrolling() {
 		e.preventDefault();
 
 		//описываем анимацию
-		animate((timePassed) => {
+		animate(() => {
 			let target = e.target;
+
 
 			let section = document.getElementById(target.getAttribute('href').slice(1));
 
-			window.scrollBy(0, section.getBoundingClientRect().top / 20);
+			window.scrollBy(0, section.getBoundingClientRect().top / 17 + 1.5 );
+			
+			
 		}, 1500);
-
+		
 	});
 }

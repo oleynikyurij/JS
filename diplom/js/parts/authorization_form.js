@@ -105,13 +105,15 @@ sendForm.addEventListener('submit', function (event) {
 	//проверка ответа сервера и соответствующие действия
 	request.onreadystatechange = () => {
 		if (request.readyState < 4) {
+			console.log(request.readyState);
 			let pict = document.createElement("img");
 			pict.src = "img/ajax-loader.gif";
 			formAutorization.appendChild(pict);
 
 		} else if (request.readyState === 4) {
+			console.log(request.readyState);
 			if (request.status === 200 && request.status < 300) {
-
+				console.log(request.readyState);
 				formAutorization.style.display = 'none';
 				document.querySelector('.popup-form-alert').style.display = 'block';
 				//добавляем контент на страницу
@@ -121,7 +123,8 @@ sendForm.addEventListener('submit', function (event) {
 			}
 		}
 	};
-
+	formAutorization.style.display = 'none';
+	document.querySelector('.popup-form-alert').style.display = 'block';
 	//очистка полей формы
 	for (let i = 0; i < formAutorization.length; i++) {
 		formAutorization.value = '';
