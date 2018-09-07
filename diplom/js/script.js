@@ -3,22 +3,22 @@
 import slider from './parts/slider';
 import modalOpen from './parts/modal_open';
 import tarif from './parts/tarif';
+import transitionPage from './parts/transition_page';
+import smoothScrolling from './parts/smooth_scrolling';
 
 window.addEventListener('DOMContentLoaded', () => {
-	
-	
+
+
 	//вызываем модули
 	slider();
 	modalOpen();
 	tarif();
- let elem = document.getElementsByClassName('header-button__main button button__big')[0];
- console.log(elem);
- elem.setAttribute('type', 'application/x-httpd-php')
-	elem.onclick = ()=> {
-		document.location.href = "site-builder.php";
-};
-
+	transitionPage();
+	smoothScrolling();
 	
+	
+
+
 
 
 });
