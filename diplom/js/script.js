@@ -5,6 +5,7 @@ import modalOpen from './parts/modal_open';
 import tarif from './parts/tarif';
 import transitionPage from './parts/transition_page';
 import smoothScrolling from './parts/smooth_scrolling';
+import authorizationForm from './parts/authorization_form';
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -15,6 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	tarif();
 	transitionPage();
 	smoothScrolling();
+	authorizationForm();
 	
 	
 
