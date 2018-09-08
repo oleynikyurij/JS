@@ -69,12 +69,12 @@ function authorizationForm() {
 
 	let nameFormValue;
 	//кирилица в поле ввода имени
-	nameForm.addEventListener('keyup', () => {
+	nameForm.addEventListener('keypress', () => {
 		nameFormValue = nameForm.value;
 		//проверка на пустую строку
 		if ((nameFormValue != null) && (nameFormValue != '')) {
 			//проверка на русские буквы
-			if (/(^[А-Я]{1}([а-я]{0,17})?$)|([А-Я]{1}([а-я]{0,17})?( )?(^[А-Я]{1}([а-я]{0,17}))?$)/.test(nameFormValue)) {
+			if (/(^[А-Я]{1}([а-я]{0,14})?( )?$)|(^[А-Я]{1}([а-я]{0,13})? [А-Я]{1}([а-я]{0,12})?$)/.test(nameFormValue)) {
 				//если русская бкува записываем				
 				nameForm.value = nameFormValue;
 			} else {

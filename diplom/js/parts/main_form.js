@@ -10,12 +10,12 @@ function mainForm() {
 
 	let nameValue;
 	//кирилица в поле ввода имени
-	name.addEventListener('keyup', () => {
+	name.addEventListener('keypress', () => {
 		nameValue = name.value;
 		//проверка на пустую строку
 		if ((nameValue != null) && (nameValue != '')) {
 			//проверка на русские буквы
-			if (/(^[А-Я]{1}([а-я]{0,17})?$)|([А-Я]{1}([а-я]{0,17})?( )?(^[А-Я]{1}([а-я]{0,17}))?$)/.test(nameValue)) {
+			if (/(^[А-Я]{1}([а-я]{0,14})?( )?$)|(^[А-Я]{1}([а-я]{0,13})? [А-Я]{1}([а-я]{0,12})?$)/.test(nameValue)) {
 				//если русская бкува записываем				
 				name.value = nameValue;
 			} else {
