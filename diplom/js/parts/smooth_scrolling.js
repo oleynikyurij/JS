@@ -8,7 +8,7 @@ function smoothScrolling() {
 		requestAnimationFrame(function animate(time) {
 
 			let timePassed = time - start;
-			console.log(timePassed);
+			
 			if (timePassed > duration) {
 				timePassed = duration;
 			}

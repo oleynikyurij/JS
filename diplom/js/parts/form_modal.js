@@ -1,14 +1,14 @@
 export default formModal;
 
 function formModal() {
-	
-	let form = document.querySelectorAll('.popup-form_form')[1],
-			btnSend = document.getElementsByClassName('button button__big popup-form__btn popup-form__btn-js')[0],
-			nameModal = document.getElementById('js-overlay-image-name'),
-			phoneModal = document.getElementById('js-overlay-phone'),
-			mask = "+38(";
 
-			//маска на телефонный номер
+	let form = document.querySelectorAll('.popup-form_form')[1],
+		inpt = form.getElementsByTagName('input'),
+		nameModal = document.getElementById('js-overlay-image-name'),
+		phoneModal = document.getElementById('js-overlay-phone'),
+		mask = "+38(";
+
+	//маска на телефонный номер
 
 	//запись маски в поле при фокусе	
 	phoneModal.addEventListener('focus', () => {
@@ -69,9 +69,9 @@ function formModal() {
 		nameValue = nameModal.value;
 		//проверка на пустую строку
 		if ((nameValue != null) && (nameValue != '')) {
-			//проверка на русские буквы
-			if (/^([а-я]{0,22})?$/.test(nameValue)) {
-				//если русская бкува записываем				
+			//проверка на русские буквы и формат "Имя / Фамилия" 
+			if (/(^[А-Я]{1}([а-я]{0,17})?$)|([А-Я]{1}([а-я]{0,17})?( )?(^[А-Я]{1}([а-я]{0,17}))?$)/.test(nameValue)) {
+				//если русская бкува записываем	/(^[А-Я]{1}([а-я]{0,17})?( [А-Я]{1})?([а-я]{3})?$)|(^[А-Я]{1}[а-я]{14} [А-Я]{1}[а-я]{16}$)/	 
 				nameModal.value = nameValue;
 			} else {
 				//если нет удаляем введённый символ
@@ -80,52 +80,48 @@ function formModal() {
 		}
 	});
 
-// обработчик на отправку формы авторизации
-btnSend.addEventListener('submit', function (event) {
-	event.preventDefault();
-	
+	// обработчик на отправку формы авторизации
+	form.addEventListener('submit', function (event) {
+		event.preventDefault();
 
-	//AJAX
-	//создаём новый запрос
-	let request = new XMLHttpRequest();
-	//настраиваем запрос
-	request.open("POST", "server.php");
-	//устанавливаем кодировку
-	request.setRequestHeader("Content-Type", "application/x-www-form-urlencode");
-	//подготавливаем данные для отправки через FormData
-	let formData = new FormData(form);
-	//отправляем форму
-	request.send(formData);
 
-	//проверка ответа сервера и соответствующие действия
-	request.onreadystatechange = () => {
-		if (request.readyState < 4) {
-			let pict = document.createElement("img");
-			pict.src = "img/ajax-loader.gif";
-			form.appendChild(pict);
+		//AJAX
+		//создаём новый запрос
+		let request = new XMLHttpRequest();
+		//настраиваем запрос
+		request.open("POST", "../../server.php");
+		//устанавливаем кодировку
+		request.setRequestHeader("Content-Type", "application/x-www-form-urlencode");
+		//подготавливаем данные для отправки через FormData
+		let formData = new FormData(form);
+		//отправляем форму
+		request.send(formData);
 
-		} else if (request.readyState === 4) {
-			if (request.status === 200 && request.status < 300) {
+		//проверка ответа сервера и соответствующие действия
+		request.onreadystatechange = () => {
+			if (request.readyState < 4) {
 
-				form.style.display = 'none';
-				document.querySelector('.js-overlay-order').style.display = 'block';
-				//добавляем контент на страницу
-			} else {
-				form.style.display = 'none';
-				document.querySelector('. js-overlay-order').style.display = 'block';
+			} else if (request.readyState === 4) {
+				if (request.status === 200 && request.status < 300) {
+
+					form.style.display = 'none';
+					document.querySelector('.js-overlay-order').style.display = 'block';
+					//добавляем контент на страницу
+				} else {
+					form.style.display = 'none';
+					document.querySelector('.js-overlay-order').style.display = 'block';
+				}
 			}
+		};
+
+		setTimeout(() => {
+			document.querySelector('.js-overlay-order').style.display = 'none';
+			form.style.display = 'block';
+		}, 4000);
+		//очистка полей формы
+		console.log(inpt);
+		for (let i = 0; i < inpt.length; i++) {
+			inpt[i].value = '';
 		}
-	};
-
-	//очистка полей формы
-	for (let i = 0; i < form.length; i++) {
-		form.value = '';
-
-	}
-	setTimeout(() => {
-		document.querySelector('. js-overlay-order').style.display = 'none';
-		
-	}, 3000);
-});
-
+	});
 }

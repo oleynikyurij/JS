@@ -3,13 +3,12 @@ export default authorizationForm;
 function authorizationForm() {
 
 	//форма авторизации
-	let formAutorization = document.querySelectorAll('popup-form_form')[0],
+	let formAutorization = document.querySelectorAll('.popup-form_form')[0];
+	let inpt = formAutorization.getElementsByTagName('input'),
 		//поле имени
 		nameForm = document.getElementsByClassName('popup-form-box-text__name')[0],
 		//поле телефона
 		phoneForm = document.getElementsByClassName('popup-form-box-text__phone')[0],
-		//кнопка отправки формы
-		sendForm = document.getElementsByClassName('button button__big popup-form__btn')[0],
 		mask = "+38(";
 
 
@@ -75,7 +74,7 @@ function authorizationForm() {
 		//проверка на пустую строку
 		if ((nameFormValue != null) && (nameFormValue != '')) {
 			//проверка на русские буквы
-			if (/^([а-я]{0,22})?$/.test(nameFormValue)) {
+			if (/(^[А-Я]{1}([а-я]{0,17})?$)|([А-Я]{1}([а-я]{0,17})?( )?(^[А-Я]{1}([а-я]{0,17}))?$)/.test(nameFormValue)) {
 				//если русская бкува записываем				
 				nameForm.value = nameFormValue;
 			} else {
@@ -85,70 +84,51 @@ function authorizationForm() {
 		}
 	});
 
-// обработчик на отправку формы авторизации
-sendForm.addEventListener('submit', function (event) {
-	event.preventDefault();
-	
+	// обработчик на отправку формы авторизации
+	formAutorization.addEventListener('submit', function (event) {
+		event.preventDefault();
 
-	//AJAX
-	//создаём новый запрос
-	let request = new XMLHttpRequest();
-	//настраиваем запрос
-	request.open("POST", "server.php");
-	//устанавливаем кодировку
-	request.setRequestHeader("Content-Type", "application/x-www-form-urlencode");
-	//подготавливаем данные для отправки через FormData
-	let formData = new FormData(formAutorization);
-	//отправляем форму
-	request.send(formData);
 
-	//проверка ответа сервера и соответствующие действия
-	request.onreadystatechange = () => {
-		if (request.readyState < 4) {
-			console.log(request.readyState);
-			let pict = document.createElement("img");
-			pict.src = "img/ajax-loader.gif";
-			formAutorization.appendChild(pict);
+		//AJAX
+		//создаём новый запрос
+		let request = new XMLHttpRequest();
+		//настраиваем запрос
+		request.open("POST", "../../server.php");
+		//устанавливаем кодировку
+		request.setRequestHeader("Content-Type", "application/x-www-form-urlencode");
+		//подготавливаем данные для отправки через FormData
+		let formData = new FormData(formAutorization);
+		//отправляем форму
+		request.send(formData);
 
-		} else if (request.readyState === 4) {
-			console.log(request.readyState);
-			if (request.status === 200 && request.status < 300) {
-				console.log(request.readyState);
-				formAutorization.style.display = 'none';
-				document.querySelector('.popup-form-alert').style.display = 'block';
-				//добавляем контент на страницу
-			} else {
-				formAutorization.style.display = 'none';
-				document.querySelector('.popup-form-error').style.display = 'block';
+		//проверка ответа сервера и соответствующие действия
+		request.onreadystatechange = () => {
+			if (request.readyState < 4) {
+
+			} else if (request.readyState === 4) {
+
+				if (request.status === 200 && request.status < 300) {
+					console.log(request.readyState);
+					console.log(request.status);
+					formAutorization.style.display = 'none';
+					document.querySelector('.popup-form-alert').style.display = 'block';
+					//добавляем контент на страницу
+				} else {
+					formAutorization.style.display = 'none';
+					document.querySelector('.popup-form-error').style.display = 'block';
+				}
 			}
+		};
+
+		for (let i = 0; i < inpt.length; i++) {
+			inpt[i].value = '';
+
 		}
-	};
-	formAutorization.style.display = 'none';
-	document.querySelector('.popup-form-alert').style.display = 'block';
-	//очистка полей формы
-	for (let i = 0; i < formAutorization.length; i++) {
-		formAutorization.value = '';
-
-	}
-	setTimeout(() => {
-		document.querySelector('.popup-form-alert').style.display = 'none';
-		document.querySelector('.popup-form-error').style.display = 'none';
-	}, 3000);
-});
-
-
+		setTimeout(() => {
+			document.querySelector('.popup-form-alert').style.display = 'none';
+			document.querySelector('.popup-form-error').style.display = 'none';
+			formAutorization.style.display = 'block';
+		}, 4000);
+	});
 
 }
-
-
-
-
-//очищаем поля ввода
-// for (let i = 0; i < hireEmployers.length; i++) {
-// 	hireEmployers[i].value = '';
-// }
-
-
-
-
-// 
