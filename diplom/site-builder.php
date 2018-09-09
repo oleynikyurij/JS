@@ -2,6 +2,7 @@
 <?php include 'menu.php'; ?>
 
 			<section class="builder1" id="site-builder">
+			
 			  <div class="container">
 			    <h2 class="section-title wow fadeInUp">Выберите фон</h2>
 			    <!-- /.section-title -->
@@ -142,5 +143,5 @@
 			  </div>
 			  <!-- /.container -->
 			</section>
-
+<script src = "js/php/fon.js"></script>
 <?php include 'builder-footer.php'; ?>
