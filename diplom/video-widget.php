@@ -42,5 +42,5 @@
 			    <?php include 'button.php'; ?> 
       </section>
       <!-- /.builder8 -->
-
+<script src="js/php/video_vidget.js"></script>
 <?php include 'builder-footer.php'; ?>
