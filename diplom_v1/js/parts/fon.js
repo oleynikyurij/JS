@@ -3,7 +3,7 @@ function fon() {
 	let siteBuilder = document.getElementById('site-builder'),
 		minimized = document.querySelectorAll('.minimized'),
 		//адhtc увеличенного изображения
-		urlMaxImage = '../../img/image-max5.jpg';
+		// urlMaxImage = '../../img/image-max5.jpg';
 	//создаём и размещаем блок для увеличенного фона
 	if(!siteBuilder){ return false;};
 	let divImage = document.createElement('div');
@@ -18,7 +18,7 @@ function fon() {
 		if (target.className === 'minimized') {
 			for (let i = 0; i < minimized.length; i++) {
 				if (target === minimized[i]) {
-					console.log(minimized[i], target.src);
+					
 					//отображаем увеличенную картинку
 					// minimized[i].classList.add('minimaze-max');
 					divImage.innerHTML = `<div class="overlay-img"></div><div class="position-image" ><img class="minimaze-max" src='${target.src}'/><div id="close-popup">X</div></div>`;

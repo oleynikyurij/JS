@@ -24,9 +24,11 @@ function inviteGuest() {
 			if (input[i].value) {
 				// console.log(input[i].value);
 				invateBlock[i].innerHTML = input[i].value;
+				input[i].value = '';
 			} else {
 				for (let j = 0; j < invateBlock.length; j++) {
 					invateBlock[j].innerHTML = starValue[j];
+					input[j].value = '';
 				};
 				modal.style.display = "none";
 			}
@@ -34,7 +36,7 @@ function inviteGuest() {
 		};
 		setTimeout(() => {
 			modal.style.display = "none"
-		}, 2000);
+		}, 1000);
 	})
 
 	deleteBtn.addEventListener('click', () => {
@@ -44,7 +46,7 @@ function inviteGuest() {
 
 		setTimeout(() => {
 			modal.style.display = "none"
-		}, 2000);
+		}, 1000);
 	});
 };
 
