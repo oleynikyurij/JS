@@ -5,7 +5,7 @@ function inviteGuest() {
 		saveBtn = document.querySelector('.invate-modal-input-save');
 	let input = document.querySelectorAll('.invate-modal-input input'),
 		starValue = ['Приглашаем Вас на торжество по случаю нашего бракосочетания', 'Андрей и Марина', '23 сентября в 13:00', 'г. Москва, ул. Комсомольская, 37. Ресторан “Прага'];
-	if (!editBtn) {
+	if (!modal) {
 		return false
 	};
 
