@@ -48,12 +48,15 @@
                   </div>  
                 </div>
                 <!-- /.invitation-block__item -->
-              </div>
-							<div id="invate-modal"><div class="invate-modal-input">
+							</div>
+							
+							<div id="invate-modal">
+								<div class="invate-modal-input">
 								<div><input type="text" placeholder="Приглашаем Вас на торжество по случаю нашего бракосочетания" >   </div>
 								<div><input type="text" placeholder="Андрей и Марина" >   </div>
 								<div><input type="text" placeholder="23 сентября в 13:00" >   </div>
 								<div><input type="text" placeholder="г. Москва, ул. Комсомольская, 37. Ресторан “Прага”" >   </div>
+								<div><button class="invate-modal-input-save">Сохранить изменения</button></div>
 								</div>
 							</div>
               <!-- /.invitation-block -->
