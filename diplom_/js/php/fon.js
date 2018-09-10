@@ -7,6 +7,7 @@ export default fon;
 		urlMaxImage = '../../img/image-max5.jpg';
 	//создаём и размещаем блок для увеличенного фона
 	let divImage = document.createElement('div');
+	if(!siteBuilder){ return false;};
 	divImage.classList.add('close-popup-maxImage');
 	document.body.appendChild(divImage);
 	let closeMaxImage = document.querySelector('.close-popup-maxImage');

@@ -4301,3 +4301,20 @@ svg:active {
 .not-before::before {
 	display: none;
 }
+.overlay-img {
+	position: fixed;
+	z-index:2 ;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0.5;
+	background-color: #000;
+	display: none;
+}
+.position-image {
+	position: fixed;
+	left: 30%;
+	top: 100px;
+	z-index: 4;
+}

@@ -7,21 +7,19 @@ function fon() {
 	//создаём и размещаем блок для увеличенного фона
 	let divImage = document.createElement('div');
 	divImage.classList.add('close-popup-maxImage');
+	if(!siteBuilder){ return false;};
 	document.body.appendChild(divImage);
 	let closeMaxImage = document.querySelector('.close-popup-maxImage');
-
-	console.log(siteBuilder);
-
+	
 	siteBuilder.addEventListener('click', function (e) {
 		
 		let target = e.target;
-		console.log(target);
 
 		if (target.className === 'minimized') {
 			for (let i = 0; i < minimized.length; i++) {
 				if (target === minimized[i]) {
 					//отображаем увеличенную картинку
-					divImage.innerHTML = `<div class="overlay-img"></div><div class="position-image" style="top: ${window.scrollY + 100}px"><img src='${urlMaxImage}'/><div id="close-popup-max">X</div></div>`;
+					divImage.innerHTML = `<div class="overlay-img"></div><div class="position-image" ><img src='${urlMaxImage}'/><div id="close-popup">X</div></div>`;
 					document.querySelector('.overlay-img').style.display = 'block';
 
 
@@ -32,7 +30,7 @@ function fon() {
 	});
 
 	closeMaxImage.addEventListener('click', (e) => {
-		let close = document.getElementById('close-popup-max');
+		let close = document.getElementById('close-popup');
 		let over = document.querySelector('.overlay-img');
 		if (e.target === over || e.target === close) {
 			over.style.display = 'none';
