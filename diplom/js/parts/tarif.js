@@ -1,4 +1,4 @@
-export default tarif;
+(function () { 
 
 function tarif() {
 	let jsOverlayForm = document.querySelector('.js-overlay-thank-you'),
@@ -54,3 +54,6 @@ function tarif() {
 
 
 }
+
+module.exports = tarif;
+ }());

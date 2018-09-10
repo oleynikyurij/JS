@@ -1,5 +1,4 @@
-export default smoothScrolling;
-
+(function(){
 function smoothScrolling() {
 	function animate(draw, duration) {
 
@@ -40,4 +39,7 @@ function smoothScrolling() {
 		}, 1500);
 		
 	});
-}
+};
+
+module.exports = smoothScrolling;
+}());

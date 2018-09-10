@@ -1,5 +1,5 @@
-export default slider;
 
+(function () { 
 function slider() {
 
 	let slideIndex = 1,
@@ -50,4 +50,6 @@ function slider() {
 			}
 		}
 	});
-}
+}; 
+module.exports = slider;
+}());

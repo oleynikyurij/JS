@@ -1,5 +1,5 @@
-'use strict';
-window.addEventListener('DOMContentLoaded', function () {
+export default fon;
+ function fon() {
 	
 	let siteBuilder = document.getElementById('site-builder'),
 		minimized = document.querySelectorAll('.minimized'),
@@ -36,4 +36,4 @@ window.addEventListener('DOMContentLoaded', function () {
 			divImage.innerHTML = '';
 		}
 	});
-});
+}

@@ -1,4 +1,4 @@
-export default transitionPage;
+(function () { 
 
 function transitionPage() {
 	let elemBtn = document.getElementsByClassName('header-button__main button button__big')[0];
@@ -6,4 +6,6 @@ function transitionPage() {
 	elemBtn.onclick = () => {
 		window.location.pathname = "site-builder.php";
 	};
-}
+};
+module.exports = transitionPage;
+ }());

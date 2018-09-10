@@ -1,4 +1,4 @@
-export default mainForm;
+(function () {  
 
 function mainForm() {
 
@@ -71,3 +71,7 @@ function mainForm() {
 		}, 4000);
 	});
 }
+ module.exports = mainForm;
+	 
+ 
+}());

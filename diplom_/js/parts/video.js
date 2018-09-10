@@ -1,10 +1,7 @@
-'use strict';
-window.addEventListener('DOMContentLoaded', function() {
+export default videoPlayer;
 
+function videoPlayer() {
 	let yuotube = document.querySelector('.youtube'),
-			adressVideo = document.getElementById('adress-video'),
-			addVideoBtn = document.getElementsByClassName('form-button__add button button__big')[0],
-			
 			//создаём элементы картинок
 			preview = document.createElement('img'),
 			playBtn = document.createElement('img');
@@ -21,11 +18,9 @@ window.addEventListener('DOMContentLoaded', function() {
 			yuotube.appendChild(preview);
 			yuotube.appendChild(playBtn);
 
-	let urlVideo = 'https://www.youtube.com/embed/q_th_D4VHC0?rel=0';
-
-			let addVideo = (url) => {
+			let addVideo = () => {
 				let iframe =`
-				<iframe width="655" height="403" src="${url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<iframe width="655" height="403" src="https://www.youtube.com/embed/q_th_D4VHC0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 				`;
 				//изменяем стили элемента для корректного отображения видео
 				yuotube.classList.add('not-before');
@@ -33,17 +28,5 @@ window.addEventListener('DOMContentLoaded', function() {
 				yuotube.innerHTML = iframe;
 			};
 			//устанавливаем обработчик для запуска yuotube
-			yuotube.addEventListener('click', ()=> {
-				addVideo(urlVideo);
-			});
-
-			addVideoBtn.addEventListener('click', (e)=> {
-				e.preventDefault();
-				let url = adressVideo.value;
-				//замена в строке адреса для корректного отображения
-				url =	url.replace(/watch\?v=/, 'embed/');
-				addVideo(url);
-				adressVideo.value = '';
-			});
-
-});
+			yuotube.addEventListener('click', addVideo);
+}

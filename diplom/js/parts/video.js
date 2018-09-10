@@ -1,4 +1,4 @@
-export default videoPlayer;
+(function () {  
 
 function videoPlayer() {
 	let yuotube = document.querySelector('.youtube'),
@@ -10,9 +10,9 @@ function videoPlayer() {
 			playBtn.style.cssText = `position: absolute;
 															 top: 45%;
 															 left: 45%;`;												
-			preview.src = '../../img/video/video-bg.jpg';
+			preview.src = 'img/video/video-bg.jpg';
 			preview.setAttribute('alt', 'video');
-			playBtn.src = '../../img/video/button-play.png';
+			playBtn.src = 'img/video/button-play.png';
 			preview.setAttribute('alt', 'play');
 			//добавляем картинки в заданный блок
 			yuotube.appendChild(preview);
@@ -30,3 +30,5 @@ function videoPlayer() {
 			//устанавливаем обработчик для запуска yuotube
 			yuotube.addEventListener('click', addVideo);
 }
+module.exports = videoPlayer;
+}());

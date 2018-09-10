@@ -1,4 +1,4 @@
-export default authorizationForm;
+(function () {  
 
 function authorizationForm() {
 
@@ -132,3 +132,7 @@ function authorizationForm() {
 	});
 
 }
+
+module.exports = authorizationForm;
+
+}());

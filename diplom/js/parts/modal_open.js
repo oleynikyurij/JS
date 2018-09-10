@@ -1,4 +1,4 @@
-export default modalOpen;
+(function () {  
 
 function modalOpen() {
 
@@ -29,3 +29,5 @@ function modalOpen() {
 			});
 
 };
+module.exports = modalOpen;
+}());

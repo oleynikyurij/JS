@@ -1,5 +1,4 @@
-export default formModal;
-
+(function(){
 function formModal() {
 
 	let form = document.querySelectorAll('.popup-form_form')[1],
@@ -124,4 +123,7 @@ function formModal() {
 			inpt[i].value = '';
 		}
 	});
-}
+};
+
+module.exports = formModal;
+}());

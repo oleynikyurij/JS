@@ -2,12 +2,14 @@ let path = require('path');
 
 let conf = {
 	//точка входа и файл входа
-	entry: './js/script.js',
+	// entry: './js/script.js',
+	entry: './js/script-php.js',
 	//точка выхода
 	output: {
 		path: path.resolve(__dirname,'./js/common/'),
 		//имя результирующего файла
-		filename: 'main.js',
+		// filename: 'main.js',
+		filename: 'main-php.js',
 		//путь для работы dev сервера
 		publicPath: 'js/common/'
 	}, 

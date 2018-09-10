@@ -1,2 +1,727 @@
-!function(e){var t={};function n(o){if(t[o])return t[o].exports;var r=t[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)n.d(o,r,function(t){return e[t]}.bind(null,r));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="js/common/",n(n.s=0)}([function(e,t,n){"use strict";n.r(t);var o=function(){var e=1,t=document.getElementsByClassName("a-slide"),n=document.querySelector(".slider-dots"),o=document.getElementsByClassName("dot"),r=function(n){n>t.length&&(e=1),n<1&&(e=t.length);for(var r=0;r<t.length;r++)t[r].style.display="none";for(var a=0;a<o.length;a++)o[a].classList.remove("dot__active");t[e-1].style.display="block",t[e-1].classList.add("animated","fadeIn"),o[e-1].classList.add("dot__active")},a=function(t){r(e=t)};r(1),e=2,setInterval(function(){r(e),e++},3e3),n.addEventListener("click",function(e){for(var t=0;t<=o.length;t++)e.target.classList.contains("dot")&&e.target==o[t-1]&&a(t)})};var r=function(){var e=document.querySelector(".header-login__button"),t=document.querySelector(".footer-login__button"),n=document.querySelector(".overlay"),o=document.querySelector(".popup .popup-close");e.addEventListener("click",function(e){n.style.display="block"}),t.addEventListener("click",function(){n.style.display="block"}),n.addEventListener("click",function(e){e.target!==n&&e.target!==o||(n.style.display="none")})};var a=function(){var e=document.querySelector(".js-overlay-thank-you"),t=document.querySelector(".js-overlay-popup .popup-close"),n=document.querySelector(".pricing"),o=document.getElementsByClassName("button popup-form__btn_2 popup-form__btn-js")[0],r=document.getElementById("gold"),a=document.getElementById("silver"),l=document.getElementById("basic");n.addEventListener("click",function(t){t.target.classList.contains("pricing-block__button")&&(e.style.display="block"),t.target.classList.contains("pricing-block__button_basic")&&(l.checked=!0),t.target.classList.contains("pricing-block__button_silver")&&(a.checked=!0),t.target.classList.contains("pricing-block__button_gold")&&(r.checked=r)}),e.addEventListener("click",function(n){n.target!==e&&n.target!==o&&n.target!==t||(e.style.display="none")})};var l=function(){document.getElementsByClassName("header-button__main button button__big")[0].onclick=function(){window.location.pathname="site-builder.php"}};var u=function(){document.querySelector(".header-nav-menu").addEventListener("click",function(e){e.preventDefault(),function(e,t){var n=performance.now();requestAnimationFrame(function o(r){var a=r-n;a>t&&(a=t),e(a),a<t&&requestAnimationFrame(o)})}(function(){var t=e.target,n=document.getElementById(t.getAttribute("href").slice(1));window.scrollBy(0,n.getBoundingClientRect().top/17+1.5)},1500)})};var s=function(){var e,t=document.querySelectorAll(".popup-form_form")[0],n=t.getElementsByTagName("input"),o=document.getElementsByClassName("popup-form-box-text__name")[0],r=document.getElementsByClassName("popup-form-box-text__phone")[0];r.addEventListener("focus",function(){r.value="+38("}),r.addEventListener("input",function(){var e=this.value.substring(4);function t(e){var t=e.replace(/[^\d]+/g,"");return""!==t&&t.substring(0,10)}t(e)?this.value="+38("+function(e){for(var t="",n=0;n<e.length;n++)3===n?(t+=") ",t+=e.charAt(n)):6===n||8===n?(t+="-",t+=e.charAt(n)):t+=e.charAt(n);return t}(t(e)):this.value="",0==this.value.length&&(this.value="+38(")}),o.addEventListener("keypress",function(){null!=(e=o.value)&&""!=e&&(/(^[А-Я]{1}([а-я]{0,14})?( )?$)|(^[А-Я]{1}([а-я]{0,13})? [А-Я]{1}([а-я]{0,12})?$)/.test(e)?o.value=e:o.value=e.substr(0,e.length-1))}),t.addEventListener("submit",function(e){e.preventDefault();var o=new XMLHttpRequest;o.open("POST","../../server.php"),o.setRequestHeader("Content-Type","application/x-www-form-urlencode");var r=new FormData(t);o.send(r),o.onreadystatechange=function(){o.readyState<4||4===o.readyState&&(200===o.status&&o.status<300?(console.log(o.readyState),console.log(o.status),t.style.display="none",document.querySelector(".popup-form-alert").style.display="block"):(t.style.display="none",document.querySelector(".popup-form-error").style.display="block"))};for(var a=0;a<n.length;a++)n[a].value="";setTimeout(function(){document.querySelector(".popup-form-alert").style.display="none",document.querySelector(".popup-form-error").style.display="none",t.style.display="block"},4e3)})};var c=function(){var e,t=document.querySelectorAll(".popup-form_form")[1],n=t.getElementsByTagName("input"),o=document.getElementById("js-overlay-image-name"),r=document.getElementById("js-overlay-phone");r.addEventListener("focus",function(){r.value="+38("}),r.addEventListener("input",function(){var e=this.value.substring(4);function t(e){var t=e.replace(/[^\d]+/g,"");return""!==t&&t.substring(0,10)}t(e)?this.value="+38("+function(e){for(var t="",n=0;n<e.length;n++)3===n?(t+=") ",t+=e.charAt(n)):6===n||8===n?(t+="-",t+=e.charAt(n)):t+=e.charAt(n);return t}(t(e)):this.value="",0==this.value.length&&(this.value="+38(")}),o.addEventListener("keypress",function(){e=o.value,/(^[А-Я]{1}([а-я]{0,14})?( )?$)|(^[А-Я]{1}([а-я]{0,13})? [А-Я]{1}([а-я]{0,12})?$)/.test(e)?o.value=e:o.value=e.substr(0,e.length-1)}),t.addEventListener("submit",function(e){e.preventDefault();var o=new XMLHttpRequest;o.open("POST","../../server.php"),o.setRequestHeader("Content-Type","application/x-www-form-urlencode");var r=new FormData(t);o.send(r),o.onreadystatechange=function(){o.readyState<4||4===o.readyState&&(200===o.status&&o.status,t.style.display="none",document.querySelector(".js-overlay-order").style.display="block")},setTimeout(function(){document.querySelector(".js-overlay-order").style.display="none",t.style.display="block"},4e3),console.log(n);for(var a=0;a<n.length;a++)n[a].value=""})};var i=function(){var e,t=document.querySelector(".form-group"),n=t.getElementsByTagName("input"),o=document.querySelectorAll(".form-group")[0],r=document.getElementById("image-name");r.addEventListener("keypress",function(){null!=(e=r.value)&&""!=e&&(/(^[А-Я]{1}([а-я]{0,14})?( )?$)|(^[А-Я]{1}([а-я]{0,13})? [А-Я]{1}([а-я]{0,12})?$)/.test(e)?r.value=e:r.value=e.substr(0,e.length-1))}),t.addEventListener("submit",function(e){e.preventDefault();var r=new XMLHttpRequest;r.open("POST","../../server.php"),r.setRequestHeader("Content-Type","application/x-www-form-urlencode");var a=new FormData(t);r.send(a),r.onreadystatechange=function(){r.readyState<4||4===r.readyState&&(200===r.status&&r.status<300?(o.style.display="none",document.querySelector(".form-group-alert").style.display="block"):(o.style.display="none",document.querySelector(".form-group-error").style.display="block"))};for(var l=0;l<n.length;l++)n[l].value="";t.getElementsByTagName("textarea")[0].value="",setTimeout(function(){document.querySelector(".form-group-alert").style.display="none",document.querySelector(".form-group-error").style.display="none",o.style.display="block"},4e3)})};var d=function(){var e=document.querySelector(".youtube"),t=document.createElement("img"),n=document.createElement("img");e.style.cssText+="position: relative; cursor: pointer;",n.style.cssText="position: absolute;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t top: 45%;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t left: 45%;",t.src="../../img/video/video-bg.jpg",t.setAttribute("alt","video"),n.src="../../img/video/button-play.png",t.setAttribute("alt","play"),e.appendChild(t),e.appendChild(n);e.addEventListener("click",function(){e.classList.add("not-before"),e.innerHTML='\n\t\t\t\t<iframe width="655" height="403" src="https://www.youtube.com/embed/q_th_D4VHC0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>\n\t\t\t\t'})};window.addEventListener("DOMContentLoaded",function(){o(),r(),a(),l(),u(),s(),c(),i(),d()})}]);
-//# sourceMappingURL=main.js.map
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+'use strict';
+
+window.addEventListener('DOMContentLoaded', () => {
+	
+	//импортируем модули
+	let  slider = require('../parts/slider.js');
+	let   modalOpen = require('../parts/modal_open.js');
+	let  tarif = require('../parts/tarif.js');
+	let  transitionPage = require('../parts/transition_page.js');
+	let  smoothScrolling = require('../parts/smooth_scrolling.js');
+	let  authorizationForm = require('../parts/authorization_form.js');
+	let  formModal = require('../parts/form_modal.js');
+	let  mainForm = require('../parts/main_form.js');
+	let  videoPlayer = require('../parts/video.js');
+	let  fon = require('../parts/fon.js');
+	let  videoVidget = require('../parts/video_vidget.js');
+
+	//вызываем модули
+	slider();
+	modalOpen();
+	tarif();
+	transitionPage();
+	smoothScrolling();
+	authorizationForm();
+	formModal();
+	mainForm();
+	videoPlayer();
+	fon();
+	videoVidget();
+	
+	
+
+
+
+
+});
+},{"../parts/authorization_form.js":2,"../parts/fon.js":3,"../parts/form_modal.js":4,"../parts/main_form.js":5,"../parts/modal_open.js":6,"../parts/slider.js":7,"../parts/smooth_scrolling.js":8,"../parts/tarif.js":9,"../parts/transition_page.js":10,"../parts/video.js":11,"../parts/video_vidget.js":12}],2:[function(require,module,exports){
+(function () {  
+
+function authorizationForm() {
+
+	//форма авторизации
+	let formAutorization = document.querySelectorAll('.popup-form_form')[0];
+	let inpt = formAutorization.getElementsByTagName('input'),
+		//поле имени
+		nameForm = document.getElementsByClassName('popup-form-box-text__name')[0],
+		//поле телефона
+		phoneForm = document.getElementsByClassName('popup-form-box-text__phone')[0],
+		mask = "+38(";
+
+
+	//маска на телефонный номер
+
+	//запись маски в поле при фокусе	
+	phoneForm.addEventListener('focus', () => {
+		phoneForm.value = mask;
+	});
+
+	phoneForm.addEventListener('input', function () {
+
+		//получаем значение из поля ввода без учёта маски
+		let val = this.value.substring(4);
+
+		//проверка введённого символа
+		if (!checkValue(val)) {
+			this.value = '';
+		} else {
+			//запись в поле маски и отформатированного номера
+			this.value = mask + maskPhone(checkValue(val));
+		};
+		//запрет на удаление маски номера из поля ввода
+		if (this.value.length == 0) {
+			this.value = mask;
+		}
+
+		//проверка на символ и удаление не цифровых символов
+		function checkValue(val) {
+			//замена всех "не цифр" на пустое поле
+			let currentVal = val.replace(/[^\d]+/g, '');
+			if (currentVal === '') {
+				return false;
+			} else {
+				//ограничение длинны номера 10 символами
+				return currentVal.substring(0, 10);
+			}
+		}
+
+		//наложение маски на  номер
+		function maskPhone(phone) {
+			let number = '';
+			for (let i = 0; i < phone.length; i++) {
+				if (i === 3) {
+					number += ') ';
+					number += phone.charAt(i);
+				} else if (i === 6 || i === 8) {
+					number += '-';
+					number += phone.charAt(i);
+				} else {
+					number += phone.charAt(i);
+				}
+			}
+			return number;
+		}
+	});
+	// end маска телефона
+
+	let nameFormValue;
+	//кирилица в поле ввода имени
+	nameForm.addEventListener('keypress', () => {
+		nameFormValue = nameForm.value;
+		//проверка на пустую строку
+		if ((nameFormValue != null) && (nameFormValue != '')) {
+			//проверка на русские буквы
+			if (/(^[А-Я]{1}([а-я]{0,14})?( )?$)|(^[А-Я]{1}([а-я]{0,13})? [А-Я]{1}([а-я]{0,12})?$)/.test(nameFormValue)) {
+				//если русская бкува записываем				
+				nameForm.value = nameFormValue;
+			} else {
+				//если нет удаляем введённый символ
+				nameForm.value = nameFormValue.substr(0, nameFormValue.length - 1);
+			}
+		}
+	});
+
+	// обработчик на отправку формы авторизации
+	formAutorization.addEventListener('submit', function (event) {
+		event.preventDefault();
+
+
+		//AJAX
+		//создаём новый запрос
+		let request = new XMLHttpRequest();
+		//настраиваем запрос
+		request.open("POST", "../../server.php");
+		//устанавливаем кодировку
+		request.setRequestHeader("Content-Type", "application/x-www-form-urlencode");
+		//подготавливаем данные для отправки через FormData
+		let formData = new FormData(formAutorization);
+		//отправляем форму
+		request.send(formData);
+
+		//проверка ответа сервера и соответствующие действия
+		request.onreadystatechange = () => {
+			if (request.readyState < 4) {
+
+			} else if (request.readyState === 4) {
+
+				if (request.status === 200 && request.status < 300) {
+					console.log(request.readyState);
+					console.log(request.status);
+					formAutorization.style.display = 'none';
+					document.querySelector('.popup-form-alert').style.display = 'block';
+					//добавляем контент на страницу
+				} else {
+					formAutorization.style.display = 'none';
+					document.querySelector('.popup-form-error').style.display = 'block';
+				}
+			}
+		};
+
+		for (let i = 0; i < inpt.length; i++) {
+			inpt[i].value = '';
+
+		}
+		setTimeout(() => {
+			document.querySelector('.popup-form-alert').style.display = 'none';
+			document.querySelector('.popup-form-error').style.display = 'none';
+			formAutorization.style.display = 'block';
+		}, 4000);
+	});
+
+}
+
+module.exports = authorizationForm;
+
+}());
+},{}],3:[function(require,module,exports){
+(function(){
+	function fon() {
+		
+	
+	let siteBuilder = document.getElementById('site-builder'),
+		minimized = document.querySelectorAll('.minimized'),
+		//адhtc увеличенного изображения
+		urlMaxImage = '../../img/image-max5.jpg';
+	//создаём и размещаем блок для увеличенного фона
+	let divImage = document.createElement('div');
+	divImage.classList.add('close-popup-maxImage');
+	document.body.appendChild(divImage);
+	let closeMaxImage = document.querySelector('.close-popup-maxImage');
+
+	siteBuilder.addEventListener('click', function (e) {
+		let target = e.target;
+
+		if (target.className === 'minimized') {
+			for (let i = 0; i < minimized.length; i++) {
+				if (target === minimized[i]) {
+					//отображаем увеличенную картинку
+					divImage.innerHTML = `<div class="overlay-img"></div><div class="position-image" style="top: ${window.scrollY + 100}px"><img src='${urlMaxImage}'/><div id="close-popup-max">X</div></div>`;
+					document.querySelector('.overlay-img').style.display = 'block';
+					
+
+					break;
+				}
+			}
+		}
+	});
+
+	closeMaxImage.addEventListener('click', (e) => {
+		let close = document.getElementById('close-popup-max');
+		let over = document.querySelector('.overlay-img');
+		if (e.target === over || e.target === close) {
+			over.style.display = 'none';
+			divImage.innerHTML = '';
+		}
+	});
+}
+module.exports = fon;
+}());
+
+
+},{}],4:[function(require,module,exports){
+(function(){
+function formModal() {
+
+	let form = document.querySelectorAll('.popup-form_form')[1],
+		inpt = form.getElementsByTagName('input'),
+		nameModal = document.getElementById('js-overlay-image-name'),
+		phoneModal = document.getElementById('js-overlay-phone'),
+		mask = "+38(";
+
+	//маска на телефонный номер
+
+	//запись маски в поле при фокусе	
+	phoneModal.addEventListener('focus', () => {
+		phoneModal.value = mask;
+	});
+
+	phoneModal.addEventListener('input', function () {
+
+		//получаем значение из поля ввода без учёта маски
+		let val = this.value.substring(4);
+
+		//проверка введённого символа
+		if (!checkValue(val)) {
+			this.value = '';
+		} else {
+			//запись в поле маски и отформатированного номера
+			this.value = mask + maskPhone(checkValue(val));
+		};
+		//запрет на удаление маски номера из поля ввода
+		if (this.value.length == 0) {
+			this.value = mask;
+		}
+
+		//проверка на символ и удаление не цифровых символов
+		function checkValue(val) {
+			//замена всех "не цифр" на пустое поле
+			let currentVal = val.replace(/[^\d]+/g, '');
+			if (currentVal === '') {
+				return false;
+			} else {
+				//ограничение длинны номера 10 символами
+				return currentVal.substring(0, 10);
+			}
+		}
+
+		//наложение маски на  номер
+		function maskPhone(phone) {
+			let number = '';
+			for (let i = 0; i < phone.length; i++) {
+				if (i === 3) {
+					number += ') ';
+					number += phone.charAt(i);
+				} else if (i === 6 || i === 8) {
+					number += '-';
+					number += phone.charAt(i);
+				} else {
+					number += phone.charAt(i);
+				}
+			}
+			return number;
+		}
+	});
+	// end маска телефона
+
+	let nameValue;
+	//кирилица в поле ввода имени
+	nameModal.addEventListener('keypress', () => {
+		nameValue = nameModal.value;
+		//проверка на пустую строку
+		
+			//проверка на русские буквы и формат "Имя / Фамилия" 
+			if (/(^[А-Я]{1}([а-я]{0,14})?( )?$)|(^[А-Я]{1}([а-я]{0,13})? [А-Я]{1}([а-я]{0,12})?$)/.test(nameValue)) {
+				//если русская бкува записываем		 
+				nameModal.value = nameValue;
+			} else {
+				//если нет удаляем введённый символ
+				nameModal.value = nameValue.substr(0, nameValue.length - 1);
+			}
+		
+	});
+
+	// обработчик на отправку формы авторизации
+	form.addEventListener('submit', function (event) {
+		event.preventDefault();
+
+
+		//AJAX
+		//создаём новый запрос
+		let request = new XMLHttpRequest();
+		//настраиваем запрос
+		request.open("POST", "../../server.php");
+		//устанавливаем кодировку
+		request.setRequestHeader("Content-Type", "application/x-www-form-urlencode");
+		//подготавливаем данные для отправки через FormData
+		let formData = new FormData(form);
+		//отправляем форму
+		request.send(formData);
+
+		//проверка ответа сервера и соответствующие действия
+		request.onreadystatechange = () => {
+			if (request.readyState < 4) {
+
+			} else if (request.readyState === 4) {
+				if (request.status === 200 && request.status < 300) {
+
+					form.style.display = 'none';
+					document.querySelector('.js-overlay-order').style.display = 'block';
+					//добавляем контент на страницу
+				} else {
+					form.style.display = 'none';
+					document.querySelector('.js-overlay-order').style.display = 'block';
+				}
+			}
+		};
+
+		setTimeout(() => {
+			document.querySelector('.js-overlay-order').style.display = 'none';
+			form.style.display = 'block';
+		}, 4000);
+		//очистка полей формы
+		console.log(inpt);
+		for (let i = 0; i < inpt.length; i++) {
+			inpt[i].value = '';
+		}
+	});
+};
+
+module.exports = formModal;
+}());
+
+},{}],5:[function(require,module,exports){
+(function () {  
+
+function mainForm() {
+
+	let main = document.querySelector('.form-group'),
+		inpt = main.getElementsByTagName('input'),
+		formBlock = document.querySelectorAll('.form-group')[0],
+		name = document.getElementById('image-name');
+
+
+	let nameValue;
+	//кирилица в поле ввода имени
+	name.addEventListener('keypress', () => {
+		nameValue = name.value;
+		//проверка на пустую строку
+		if ((nameValue != null) && (nameValue != '')) {
+			//проверка на русские буквы
+			if (/(^[А-Я]{1}([а-я]{0,14})?( )?$)|(^[А-Я]{1}([а-я]{0,13})? [А-Я]{1}([а-я]{0,12})?$)/.test(nameValue)) {
+				//если русская бкува записываем				
+				name.value = nameValue;
+			} else {
+				//если нет удаляем введённый символ
+				name.value = nameValue.substr(0, nameValue.length - 1);
+			}
+		}
+	});
+
+	// обработчик на отправку формы авторизации
+	main.addEventListener('submit', function (event) {
+		event.preventDefault();
+
+
+		//AJAX
+		//создаём новый запрос
+		let request = new XMLHttpRequest();
+		//настраиваем запрос
+		request.open("POST", "../../server.php");
+		//устанавливаем кодировку
+		request.setRequestHeader("Content-Type", "application/x-www-form-urlencode");
+		//подготавливаем данные для отправки через FormData
+		let formData = new FormData(main);
+		//отправляем форму
+		request.send(formData);
+
+		//проверка ответа сервера и соответствующие действия
+		request.onreadystatechange = () => {
+			if (request.readyState < 4) {
+
+			} else if (request.readyState === 4) {
+				if (request.status === 200 && request.status < 300) {
+
+					formBlock.style.display = 'none';
+					document.querySelector('.form-group-alert').style.display = 'block';
+					//добавляем контент на страницу
+				} else {
+					formBlock.style.display = 'none';
+					document.querySelector('.form-group-error').style.display = 'block';
+				}
+			}
+		};
+
+		//очистка полей формы
+		for (let i = 0; i < inpt.length; i++) {
+			inpt[i].value = '';
+		};
+		main.getElementsByTagName('textarea')[0].value = '';
+		setTimeout(() => {
+			document.querySelector('.form-group-alert').style.display = 'none';
+			document.querySelector('.form-group-error').style.display = 'none';
+			formBlock.style.display = 'block';
+		}, 4000);
+	});
+}
+ module.exports = mainForm;
+	 
+ 
+}());
+},{}],6:[function(require,module,exports){
+(function () {  
+
+function modalOpen() {
+
+
+	let headerLoginBtn = document.querySelector('.header-login__button'),
+			footerLoginBtn = document.querySelector('.footer-login__button'),
+			overlay = document.querySelector('.overlay'),
+			close = document.querySelector('.popup .popup-close');
+
+			//обработчики на кнопки "Войти"
+			headerLoginBtn.addEventListener('click', (e)=> {
+				overlay.style.display = "block";
+			});
+
+			footerLoginBtn.addEventListener('click', ()=> {
+				overlay.style.display = "block";
+			});
+
+			// close.addEventListener('click', ()=> {
+			// 	overlay.style.display = "none";
+			// });
+			//закрытие формы при клике по подложке или кнопке "закрыть"
+			overlay.addEventListener('click', (event)=> {
+				//определяем "подложку"
+				if ( event.target === overlay || event.target === close ) {
+					overlay.style.display = "none";
+				}
+			});
+
+};
+module.exports = modalOpen;
+}());
+},{}],7:[function(require,module,exports){
+
+(function () { 
+function slider() {
+
+	let slideIndex = 1,
+		slides = document.getElementsByClassName('a-slide'),
+		dotsWrap = document.querySelector('.slider-dots'),
+		dots = document.getElementsByClassName('dot');
+	//функция показа слайдов
+	let showSlides = (n) => {
+		if (n > slides.length) {
+			slideIndex = 1;
+		}
+		if (n < 1) {
+			slideIndex = slides.length;
+		}
+		//скрываем все слайды
+		for (let i = 0; i < slides.length; i++) {
+			slides[i].style.display = 'none';
+		}
+		//удаляем классы с точек
+		for (let i = 0; i < dots.length; i++) {
+			dots[i].classList.remove('dot__active');
+		}
+		//отображаем нужный слайд
+		slides[slideIndex - 1].style.display = 'block';
+		//добавляем анимацию на слайд
+		slides[slideIndex - 1].classList.add('animated', 'fadeIn');
+		//делаем соответствующую точку активной
+		dots[slideIndex - 1].classList.add('dot__active');
+	};
+	//функция отображения заданного слайда
+	let currentSlide = (n) => {
+		showSlides(slideIndex = n);
+	};
+	//первоначальный запуск слайдера
+	showSlides(1);
+	slideIndex = 2;
+	//отображение слайдов с интервалом в 3 секунды
+	setInterval(() => {
+		showSlides(slideIndex);
+		slideIndex++;
+	}, 3000);
+
+	//переключение на выбранный слайд
+	dotsWrap.addEventListener('click', function (e) {
+		for (let i = 0; i <= dots.length; i++) {
+			if (e.target.classList.contains('dot') && e.target == dots[i - 1]) {
+				currentSlide(i);
+			}
+		}
+	});
+}; 
+module.exports = slider;
+}());
+},{}],8:[function(require,module,exports){
+(function(){
+function smoothScrolling() {
+	function animate(draw, duration) {
+
+		let start = performance.now();
+
+		requestAnimationFrame(function animate(time) {
+
+			let timePassed = time - start;
+			
+			if (timePassed > duration) {
+				timePassed = duration;
+			}
+
+			draw(timePassed);
+
+			if (timePassed < duration) {
+				requestAnimationFrame(animate);
+			} 
+
+		});
+	};
+
+	let navigation = document.querySelector('.header-nav-menu');
+
+	navigation.addEventListener('click', (e) => {
+		e.preventDefault();
+
+		//описываем анимацию
+		animate(() => {
+			let target = e.target;
+
+
+			let section = document.getElementById(target.getAttribute('href').slice(1));
+
+			window.scrollBy(0, section.getBoundingClientRect().top / 17 + 1.5 );
+			
+			
+		}, 1500);
+		
+	});
+};
+
+module.exports = smoothScrolling;
+}());
+},{}],9:[function(require,module,exports){
+(function () { 
+
+function tarif() {
+	let jsOverlayForm = document.querySelector('.js-overlay-thank-you'),
+		close = document.querySelector('.js-overlay-popup .popup-close'),
+		pricing = document.querySelector('.pricing'),
+		canselBtn = document.getElementsByClassName('button popup-form__btn_2 popup-form__btn-js')[0],
+		gold = document.getElementById('gold'),
+		silver = document.getElementById('silver'),
+		basic = document.getElementById('basic');
+
+		
+
+	//создаём обработчик на родительский блок
+	pricing.addEventListener('click', function (e) {
+		//если событие произошло на кнопке отображаем модальное окно
+		if (e.target.classList.contains('pricing-block__button')) {
+			jsOverlayForm.style.display = 'block';
+			// проверяем на какой из кнопок произошло событие и устанавливаем соответствующую радио-кнопку в отмеченное состояние
+		}
+		if (e.target.classList.contains('pricing-block__button_basic')) {
+			basic.checked = true;
+		}
+		if (e.target.classList.contains('pricing-block__button_silver')) {
+			silver.checked = true;
+		}
+		if (e.target.classList.contains('pricing-block__button_gold')) {
+			gold.checked = gold;
+		}
+	});
+
+	//обработчик на элементы для закрытия окна
+	jsOverlayForm.addEventListener('click', (event)=> {
+		if (event.target === jsOverlayForm || event.target === canselBtn || event.target === close) {
+			jsOverlayForm.style.display = "none";
+		}
+	});
+
+
+	// close.addEventListener('click', () => {
+	// 	jsOverlayForm.style.display = "none";
+	// });
+	// cansel.addEventListener('click', () => {
+	// 	console.log(cansel);
+	// 	jsOverlayForm.style.display = "none";
+	// });
+	// //закрытие формы при клике по подложке
+	// jsOverlayForm.addEventListener('click', () => {
+	// 	//определяем "подложку"
+	// 	if (event.target === jsOverlayForm) {
+	// 		jsOverlayForm.style.display = "none";
+	// 	}
+	// });
+
+
+}
+
+module.exports = tarif;
+ }());
+},{}],10:[function(require,module,exports){
+(function () { 
+
+function transitionPage() {
+	let elemBtn = document.getElementsByClassName('header-button__main button button__big')[0];
+
+	elemBtn.onclick = () => {
+		window.location.pathname = "site-builder.php";
+	};
+};
+module.exports = transitionPage;
+ }());
+},{}],11:[function(require,module,exports){
+(function () {  
+
+function videoPlayer() {
+	let yuotube = document.querySelector('.youtube'),
+			//создаём элементы картинок
+			preview = document.createElement('img'),
+			playBtn = document.createElement('img');
+			//устанавливаем необходимые стили css
+			yuotube.style.cssText += `position: relative; cursor: pointer;`;
+			playBtn.style.cssText = `position: absolute;
+															 top: 45%;
+															 left: 45%;`;												
+			preview.src = 'img/video/video-bg.jpg';
+			preview.setAttribute('alt', 'video');
+			playBtn.src = 'img/video/button-play.png';
+			preview.setAttribute('alt', 'play');
+			//добавляем картинки в заданный блок
+			yuotube.appendChild(preview);
+			yuotube.appendChild(playBtn);
+
+			let addVideo = () => {
+				let iframe =`
+				<iframe width="655" height="403" src="https://www.youtube.com/embed/q_th_D4VHC0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				`;
+				//изменяем стили элемента для корректного отображения видео
+				yuotube.classList.add('not-before');
+				//добавляем yuotube на страницу
+				yuotube.innerHTML = iframe;
+			};
+			//устанавливаем обработчик для запуска yuotube
+			yuotube.addEventListener('click', addVideo);
+}
+module.exports = videoPlayer;
+}());
+},{}],12:[function(require,module,exports){
+ (function() {
+ 
+ function videoVidget() {
+
+	let yuotube = document.querySelector('.youtube'),
+			adressVideo = document.getElementById('adress-video'),
+			addVideoBtn = document.getElementsByClassName('form-button__add button button__big')[0],
+			
+			//создаём элементы картинок
+			preview = document.createElement('img'),
+			playBtn = document.createElement('img');
+			//устанавливаем необходимые стили css
+			yuotube.style.cssText += `position: relative; cursor: pointer;`;
+			playBtn.style.cssText = `position: absolute;
+															 top: 45%;
+															 left: 45%;`;												
+			preview.src = '../../img/video/video-bg.jpg';
+			preview.setAttribute('alt', 'video');
+			playBtn.src = '../../img/video/button-play.png';
+			preview.setAttribute('alt', 'play');
+			//добавляем картинки в заданный блок
+			yuotube.appendChild(preview);
+			yuotube.appendChild(playBtn);
+
+	let urlVideo = 'https://www.youtube.com/embed/q_th_D4VHC0?rel=0';
+
+			let addVideo = (url) => {
+				let iframe =`
+				<iframe width="655" height="403" src="${url}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				`;
+				//изменяем стили элемента для корректного отображения видео
+				yuotube.classList.add('not-before');
+				//добавляем yuotube на страницу
+				yuotube.innerHTML = iframe;
+			};
+			//устанавливаем обработчик для запуска yuotube
+			yuotube.addEventListener('click', ()=> {
+				addVideo(urlVideo);
+			});
+
+			addVideoBtn.addEventListener('click', (e)=> {
+				e.preventDefault();
+				let url = adressVideo.value;
+				//замена в строке адреса для корректного отображения
+				url =	url.replace(/watch\?v=/, 'embed/');
+				addVideo(url);
+				adressVideo.value = '';
+			});
+
+};
+module.exports = videoVidget;
+}());
+},{}]},{},[1]);
