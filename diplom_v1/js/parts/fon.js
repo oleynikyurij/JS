@@ -1,6 +1,5 @@
-export default fon;
- function fon() {
-	
+function fon() {
+
 	let siteBuilder = document.getElementById('site-builder'),
 		minimized = document.querySelectorAll('.minimized'),
 		//адhtc увеличенного изображения
@@ -10,9 +9,13 @@ export default fon;
 	divImage.classList.add('close-popup-maxImage');
 	document.body.appendChild(divImage);
 	let closeMaxImage = document.querySelector('.close-popup-maxImage');
- console.log(siteBuilder);
+
+	console.log(siteBuilder);
+
 	siteBuilder.addEventListener('click', function (e) {
+		
 		let target = e.target;
+		console.log(target);
 
 		if (target.className === 'minimized') {
 			for (let i = 0; i < minimized.length; i++) {
@@ -20,7 +23,7 @@ export default fon;
 					//отображаем увеличенную картинку
 					divImage.innerHTML = `<div class="overlay-img"></div><div class="position-image" style="top: ${window.scrollY + 100}px"><img src='${urlMaxImage}'/><div id="close-popup-max">X</div></div>`;
 					document.querySelector('.overlay-img').style.display = 'block';
-					
+
 
 					break;
 				}
@@ -36,4 +39,6 @@ export default fon;
 			divImage.innerHTML = '';
 		}
 	});
-}
+};
+
+module.exports = fon;
