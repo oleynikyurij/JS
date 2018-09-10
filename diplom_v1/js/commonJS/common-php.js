@@ -50,9 +50,9 @@ function fon() {
 			for (let i = 0; i < minimized.length; i++) {
 				if (target === minimized[i]) {
 					//отображаем увеличенную картинку
-					divImage.innerHTML = `<div class="overlay-img"></div><div class="position-image" ><img src='${urlMaxImage}'/><div id="close-popup">X</div></div>`;
-					document.querySelector('.overlay-img').style.display = 'block';
-
+					minimized[i].classList.add('minimaze-max');
+					divImage.innerHTML = `<div class="overlay-img"></div><div class="position-image" >${target}/><div id="close-popup">X</div></div>`;
+					// document.querySelector('.overlay-img').style.display = 'block';
 
 					break;
 				}

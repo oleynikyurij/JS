@@ -4318,6 +4318,13 @@ svg:active {
 	top: 100px;
 	z-index: 4;
 }
+.minimaze-max {
+	position: fixed;
+	left: 30%;
+	top: 100px;
+	z-index: 4;
+	transform: scale(2,2);
+}
 
 #invate-modal {
 	display: none;
