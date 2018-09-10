@@ -2640,15 +2640,16 @@ svg:active {
 }
 
 #close-popup {
-  width: 30px;
-  height: 30px;
-  background: #FFFFFF;
-  border: 1px solid #AFAFAF;
-  border-radius: 15px;
-  cursor: pointer;
-  position: absolute;
-  top: 15px;
-  right: 15px;
+	width: 30px;
+	height: 30px;
+	background: #FFFFFF;
+	border: 2px solid #AFAFAF;
+	border-radius: 15px;
+	cursor: pointer;
+	position: fixed;
+	top: 111px;
+	right: 399px;
+	z-index: 4;
 }
 
 #close-popup i {
@@ -4313,15 +4314,13 @@ svg:active {
 	display: none;
 }
 .position-image {
-	position: fixed;
-	left: 30%;
-	top: 100px;
-	z-index: 4;
+	
+	
 }
 .minimaze-max {
 	position: fixed;
-	left: 30%;
-	top: 100px;
+	left: 40%;
+	top: 200px;
 	z-index: 4;
 	transform: scale(2,2);
 }

@@ -5,9 +5,9 @@ function fon() {
 		//адhtc увеличенного изображения
 		urlMaxImage = '../../img/image-max5.jpg';
 	//создаём и размещаем блок для увеличенного фона
+	if(!siteBuilder){ return false;};
 	let divImage = document.createElement('div');
 	divImage.classList.add('close-popup-maxImage');
-	if(!siteBuilder){ return false;};
 	document.body.appendChild(divImage);
 	let closeMaxImage = document.querySelector('.close-popup-maxImage');
 	
@@ -18,10 +18,11 @@ function fon() {
 		if (target.className === 'minimized') {
 			for (let i = 0; i < minimized.length; i++) {
 				if (target === minimized[i]) {
+					console.log(minimized[i], target.src);
 					//отображаем увеличенную картинку
-					minimized[i].classList.add('minimaze-max');
-					divImage.innerHTML = `<div class="overlay-img"></div><div class="position-image" >${target}/><div id="close-popup">X</div></div>`;
-					// document.querySelector('.overlay-img').style.display = 'block';
+					// minimized[i].classList.add('minimaze-max');
+					divImage.innerHTML = `<div class="overlay-img"></div><div class="position-image" ><img class="minimaze-max" src='${target.src}'/><div id="close-popup">X</div></div>`;
+					document.querySelector('.overlay-img').style.display = 'block';
 
 					break;
 				}
