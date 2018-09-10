@@ -1,7 +1,7 @@
 function fon() {
 
 	let siteBuilder = document.getElementById('site-builder'),
-		minimized = document.querySelectorAll('.minimized'),
+		minimized = document.querySelectorAll('.minimized');
 		//адhtc увеличенного изображения
 		// urlMaxImage = '../../img/image-max5.jpg';
 	//создаём и размещаем блок для увеличенного фона
