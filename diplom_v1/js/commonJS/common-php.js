@@ -4,21 +4,21 @@ window.addEventListener('DOMContentLoaded', function(){
 	require('babel-polyfill');
 	let fon = require('../parts/fon.js');
 	let videoVidget = require('../parts/video_vidget.js');
-	let guestSlider = require('../parts/guest_slider.js');
 	let activeNav = require('../parts/active_nav.js');
 	let inviteGuest = require('../parts/invate_guest.js');
 	let wishEdit = require('../parts/wish_edit.js');
+	let guestList = require('../parts/guest_list.js');
 	
 
 	fon();
 	videoVidget();
-	// guestSlider();
 	activeNav();
 	inviteGuest();
 	wishEdit();
+	guestList();
 	
 });
-},{"../parts/active_nav.js":2,"../parts/fon.js":3,"../parts/guest_slider.js":4,"../parts/invate_guest.js":5,"../parts/video_vidget.js":6,"../parts/wish_edit.js":7,"babel-polyfill":8}],2:[function(require,module,exports){
+},{"../parts/active_nav.js":2,"../parts/fon.js":3,"../parts/guest_list.js":4,"../parts/invate_guest.js":5,"../parts/video_vidget.js":6,"../parts/wish_edit.js":7,"babel-polyfill":8}],2:[function(require,module,exports){
 function activNav() {
 	let tabs = document.querySelectorAll('.navigation li');
 
@@ -75,63 +75,108 @@ function fon() {
 
 module.exports = fon;
 },{}],4:[function(require,module,exports){
-function guestSlider() {
+function guestList() {
 
-	//Слайдер 
-	let slideIndex = 1,
-		slides = document.getElementsByClassName('image-box-guest')[0],
-		prev = document.querySelector('.prev'),
-		next = document.querySelector('.next');
-		if(!slides){return false};
-		// dotsWrap = document.querySelector('.slider-dots'),
-		// dots = document.getElementsByClassName('dot');
-
-
-	let showSlides = (n) => {
-		if (n > slides.length) {
-			slideIndex = 1;
-		}
-		if (n < 1) {
-			slideIndex = slides.length;
-		}
-
-		for (let i = 0; i < slides.length; i++) {
-			slides[i].style.display = 'none';
-		}
-
-		slides[n-1].style.display = 'flex';
-
+	let list1 = [],
+		list2 = [],
+		list3 = [],
 		
-
-		slides[slideIndex - 1].style.display = 'flex';
-		//добавляем анимацию на слайд
-		slides[slideIndex - 1].classList.add('animated', 'flip');
-		// slides[slideIndex - 1].style.cssText = 'display:block; '
-		
-
+		input = document.getElementsByClassName('form-addguest-box__text'),
+		deleteBtn = document.getElementsByClassName('choice__btn choice__btn-4')[0],		
+		btnSend = document.getElementsByClassName('form-button__add button button__big')[0],
+		builder1 = document.querySelector('.builder1-block'),
+		builder2 = document.querySelector('.builder2-block'),
+		builder3 = document.querySelector('.builder3-block'),
+		builderPerson1 = document.getElementsByClassName('builder1-block__text'),
+		builderPerson2 = document.getElementsByClassName('builder1-block__text'),
+		builderPerson3 = document.getElementsByClassName('builder1-block__text'),
+		column = 1;
+    if (window.location.pathname != '/guest-list.php') {
+			return false;
+		};
+	function init(arr, l) {
+		for (let i = 0; i < arr.length; i++) {
+			l[i] = arr[i].textContent;
+		}
+	};
+	//запоминаем начальный список
+	init(builderPerson1, list1);
+	init(builderPerson2, list2);
+	init(builderPerson3, list3);
+  //обработчик на поле ввода запрет отправки
+	for (let i = 0; i < input.length; i++) {
+		input[i].addEventListener('keyup', checkGuest);
+		};
+  //запись гостя
+	btnSend.addEventListener('click', (e) => {
+		e.preventDefault();
+		let p = document.createElement('p');
+		p.innerHTML = `${input[0].value} ${input[1].value}`;
+		p.classList.add(`builder${column}-block__text`);
+		p.innerHTML = `${input[0].value} ${input[1].value}`;
+		//помещаем гостей поочерёдно в разные колонки
+		switch (column) {
+			case 1:
+			builder1.appendChild(p);
+			column++
+			break;
+			case 2:
+			builder2.appendChild(p);
+			column++
+			break;
+			case 3:
+			builder3.appendChild(p);
+			column++
+			break;
+		};
+		//проверка номера колонки
+		column = column > 3 ? 1 : column;
+		//очистка полей ввода
+		for (let i = 0; i < input.length; i++) {
+			input[i].value = '';
+		};
+	});
+  //сброс к первоначальному состоянию
+	deleteBtn.addEventListener('click', (e)=> {
+	 e.preventDefault();
+	 //очищаем колонки
+	 builder1.innerHTML = '';
+	 builder2.innerHTML = '';
+	 builder3.innerHTML = '';
+	 //записываем сохранённые данные по колонкам (надо сделать функцию.... потом:))))
+	 for (let i = 0; i < list1.length; i++) {
+		let p = document.createElement('p');
+		p.innerHTML = list1[i];
+		p.classList.add('builder1-block__text');
+		builder1.appendChild(p);		 
+	 };
+	 for (let i = 0; i < list2.length; i++) {
+		let p = document.createElement('p');
+		p.innerHTML = list2[i];
+		p.classList.add('builder2-block__text');
+		builder2.appendChild(p);		 		 
+	 };
+	 for (let i = 0; i < list3.length; i++) {
+		 let p = document.createElement('p');
+		p.innerHTML = list3[i];
+		p.classList.add('builder3-block__text');
+		builder3.appendChild(p);		 		 
+	 };
+	 //инициализируем счётчик
+	 column = 1;
+	});
+  //проверка на заполнение полей и блокирование кнопки "добавить"
+	function checkGuest() {
+		if (input[0].value === '' || input[1].value === '') {
+			btnSend.disabled = true;
+		} else {
+			btnSend.disabled = false;
+		}
 	}
-	showSlides(slideIndex);
-
-	let plusSlides = (n) => {
-		showSlides(slideIndex += n);
-	};
-
-	let currentSlide = (n) => {
-		showSlides(slideIndex = n);
-	};
-
-	prev.addEventListener('click', () => {
-		plusSlides(-1);
-	});
-	next.addEventListener('click', () => {
-		plusSlides(1);
-	});
-
-
 	
 };
 
-module.exports = guestSlider;
+module.exports = guestList;
 },{}],5:[function(require,module,exports){
 function inviteGuest() {
 	let editBtn = document.getElementsByClassName('choice__btn choice__btn-1')[0],
@@ -140,9 +185,13 @@ function inviteGuest() {
 		saveBtn = document.querySelector('.invate-modal-input-save');
 	let input = document.querySelectorAll('.invate-modal-input input'),
 		starValue = ['Приглашаем Вас на торжество по случаю нашего бракосочетания', 'Андрей и Марина', '23 сентября в 13:00', 'г. Москва, ул. Комсомольская, 37. Ресторан “Прага'];
+		let invateBlock = document.querySelectorAll('.invitation-block__item div');
 	if (!modal) {
 		return false
 	};
+
+
+	
 
 	editBtn.addEventListener('click', (e) => {
 		console.log('object');
@@ -153,7 +202,6 @@ function inviteGuest() {
 	saveBtn.addEventListener('click', function (e) {
 		e.preventDefault();
 
-		let invateBlock = document.querySelectorAll('.invitation-block__item div');
 
 		for (let i = 0; i < invateBlock.length; i++) {
 			if (input[i].value) {
@@ -175,8 +223,10 @@ function inviteGuest() {
 	})
 
 	deleteBtn.addEventListener('click', () => {
+		
 		for (let i = 0; i < input.length; i++) {
 			input[i].value = '';
+			invateBlock[i].innerHTML = starValue[i];
 		};
 
 		setTimeout(() => {
@@ -253,7 +303,7 @@ function wishEdit() {
 		sendWish = document.getElementsByClassName('form-box-button__main button button__big')[0],
 		sendGreet = document.getElementsByClassName('form-box-button__main button button__big')[1],
 		slideIndex = 1,
-		slides = document.getElementsByClassName('a-slide-book'),
+		slidesWish = document.getElementsByClassName('a-slide-book'),
 		dotsWrap = document.querySelector('.slick-book-dots'),
 		prev = document.querySelector('.prev-slide'),
 		next = document.querySelector('.next-slide'),
@@ -261,8 +311,8 @@ function wishEdit() {
 		wishDefault = ['Пожелание', 'Любите крепко, мечтайте красиво, живите роскошно и всегда поддерживайте друг друга!', `Свои судьбы вы соединили <br>Крепкою любовью, молодые, <br>Счастьем своим солнышко затмили <br>И просторы ярко-голубые! <br>Поздравляем вас с днем обручения, <br>Будьте вы друг другу вдохновением! <br>`],
 		greetsDefault = ['Поздравление', 'Поздравляю, дорогие. Хочу вам пожелать долгой и счастливой совместной жизни', 'Как важно, чтобы люди находили друг друга, находили свою любовь и половинку! Вы нашли! Я вас поздравляю со свадьбой, с любовью, с новой жизнью! Желаю много очень крепкой, верной, всепобеждающей любви, но и не меньше терпения и смирения! Понимайте друг друга, прощайте друг другу, учитесь быть вместе с радостью в сердце! Приятных вам долгих дней и жарких ночей! Не серых, а цветных будней, ярких выходных и праздников! Детишек вам полный дом и благополучия!'];
 
-	if (!slides) {
-		return false
+	if (window.location.pathname != '/book-wishes.php') {
+		return false;
 	};
 	//переключение табов
 	for (let i = 0; i < tab.length; i++) {
@@ -282,20 +332,20 @@ function wishEdit() {
 
 	//функция показа слайдов
 	let showSlides = (n) => {
-		if (n > slides.length) {
+		if (n > slidesWish.length) {
 			slideIndex = 1;
 		}
 		if (n < 1) {
-			slideIndex = slides.length;
+			slideIndex = slidesWish.length;
 		}
-		for (let i = 0; i < slides.length; i++) {
-			slides[i].style.display = 'none';
+		for (let i = 0; i < slidesWish.length; i++) {
+			slidesWish[i].style.display = 'none';
 		}
 		for (let i = 0; i < dots.length; i++) {
 			dots[i].classList.remove('slick-active');
 		}
-		slides[slideIndex - 1].style.display = 'block';
-		slides[slideIndex - 1].classList.add('animated', 'fadeIn');
+		slidesWish[slideIndex - 1].style.display = 'block';
+		slidesWish[slideIndex - 1].classList.add('animated', 'fadeIn');
 		dots[slideIndex - 1].classList.add('slick-active');
 	};
 	let currentSlide = (n) => {

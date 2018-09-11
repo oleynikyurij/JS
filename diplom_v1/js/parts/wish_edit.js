@@ -10,7 +10,7 @@ function wishEdit() {
 		sendWish = document.getElementsByClassName('form-box-button__main button button__big')[0],
 		sendGreet = document.getElementsByClassName('form-box-button__main button button__big')[1],
 		slideIndex = 1,
-		slides = document.getElementsByClassName('a-slide-book'),
+		slidesWish = document.getElementsByClassName('a-slide-book'),
 		dotsWrap = document.querySelector('.slick-book-dots'),
 		prev = document.querySelector('.prev-slide'),
 		next = document.querySelector('.next-slide'),
@@ -18,8 +18,8 @@ function wishEdit() {
 		wishDefault = ['Пожелание', 'Любите крепко, мечтайте красиво, живите роскошно и всегда поддерживайте друг друга!', `Свои судьбы вы соединили <br>Крепкою любовью, молодые, <br>Счастьем своим солнышко затмили <br>И просторы ярко-голубые! <br>Поздравляем вас с днем обручения, <br>Будьте вы друг другу вдохновением! <br>`],
 		greetsDefault = ['Поздравление', 'Поздравляю, дорогие. Хочу вам пожелать долгой и счастливой совместной жизни', 'Как важно, чтобы люди находили друг друга, находили свою любовь и половинку! Вы нашли! Я вас поздравляю со свадьбой, с любовью, с новой жизнью! Желаю много очень крепкой, верной, всепобеждающей любви, но и не меньше терпения и смирения! Понимайте друг друга, прощайте друг другу, учитесь быть вместе с радостью в сердце! Приятных вам долгих дней и жарких ночей! Не серых, а цветных будней, ярких выходных и праздников! Детишек вам полный дом и благополучия!'];
 
-	if (!slides) {
-		return false
+	if (window.location.pathname != '/book-wishes.php') {
+		return false;
 	};
 	//переключение табов
 	for (let i = 0; i < tab.length; i++) {
@@ -39,20 +39,20 @@ function wishEdit() {
 
 	//функция показа слайдов
 	let showSlides = (n) => {
-		if (n > slides.length) {
+		if (n > slidesWish.length) {
 			slideIndex = 1;
 		}
 		if (n < 1) {
-			slideIndex = slides.length;
+			slideIndex = slidesWish.length;
 		}
-		for (let i = 0; i < slides.length; i++) {
-			slides[i].style.display = 'none';
+		for (let i = 0; i < slidesWish.length; i++) {
+			slidesWish[i].style.display = 'none';
 		}
 		for (let i = 0; i < dots.length; i++) {
 			dots[i].classList.remove('slick-active');
 		}
-		slides[slideIndex - 1].style.display = 'block';
-		slides[slideIndex - 1].classList.add('animated', 'fadeIn');
+		slidesWish[slideIndex - 1].style.display = 'block';
+		slidesWish[slideIndex - 1].classList.add('animated', 'fadeIn');
 		dots[slideIndex - 1].classList.add('slick-active');
 	};
 	let currentSlide = (n) => {

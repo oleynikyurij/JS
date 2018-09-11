@@ -21,28 +21,28 @@
 				      <!-- /.col-3 -->
 
 				      <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 d-flex justify-content-center">
-				        <div class="builder3-block">
-				          <p class="builder3-block__text">Наталия Жовнир</p>
+				        <div class="builder1-block">
+				          <p class="builder1-block__text">Наталия Жовнир</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Лапенко Александр</p>
+				          <p class="builder1-block__text">Лапенко Александр</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Кароль Артур</p>
+				          <p class="builder1-block__text">Кароль Артур</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Драгунец Иван</p>
+				          <p class="builder1-block__text">Драгунец Иван</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Грибов Владимир</p>
+				          <p class="builder1-block__text">Грибов Владимир</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Рыбалка Сергей</p>
+				          <p class="builder1-block__text">Рыбалка Сергей</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Конопатская Оксана</p>
+				          <p class="builder1-block__text">Конопатская Оксана</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Антонюк Людмила</p>
+				          <p class="builder1-block__text">Антонюк Людмила</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Хмель Роман</p>
+				          <p class="builder1-block__text">Хмель Роман</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Кавун Анатолий</p>
+				          <p class="builder1-block__text">Кавун Анатолий</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Сивий Артем</p>
+				          <p class="builder1-block__text">Сивий Артем</p>
 				          <!-- /.builder3-block__text -->
 				        </div>
 				        <!-- /.builder3-block -->
@@ -50,28 +50,28 @@
 				      <!-- /.col-3 -->
 				      
 				      <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-auto d-flex justify-content-center">
-				        <div class="builder3-block">
-				          <p class="builder3-block__text">Донских Ольга</p>
+				        <div class="builder2-block">
+				          <p class="builder2-block__text">Донских Ольга</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Лой Александр</p>
+				          <p class="builder2-block__text">Лой Александр</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Ирина Гармаш</p>
+				          <p class="builder2-block__text">Ирина Гармаш</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Коньшина Тамара</p>
+				          <p class="builder2-block__text">Коньшина Тамара</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Билецкий Богдан</p>
+				          <p class="builder2-block__text">Билецкий Богдан</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Лысенко Виталий</p>
+				          <p class="builder2-block__text">Лысенко Виталий</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Вадим Баланюк</p>
+				          <p class="builder2-block__text">Вадим Баланюк</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Владимир Мельниченко</p>
+				          <p class="builder2-block__text">Владимир Мельниченко</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Ивченко Светлана</p>
+				          <p class="builder2-block__text">Ивченко Светлана</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Вармиш Наталья</p>
+				          <p class="builder2-block__text">Вармиш Наталья</p>
 				          <!-- /.builder3-block__text -->
-				          <p class="builder3-block__text">Сивий Артем</p>
+				          <p class="builder2-block__text">Сивий Артем</p>
 				          <!-- /.builder3-block__text -->
 				        </div>
 				        <!-- /.builder3-block -->

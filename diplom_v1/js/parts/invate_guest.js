@@ -5,9 +5,13 @@ function inviteGuest() {
 		saveBtn = document.querySelector('.invate-modal-input-save');
 	let input = document.querySelectorAll('.invate-modal-input input'),
 		starValue = ['Приглашаем Вас на торжество по случаю нашего бракосочетания', 'Андрей и Марина', '23 сентября в 13:00', 'г. Москва, ул. Комсомольская, 37. Ресторан “Прага'];
+		let invateBlock = document.querySelectorAll('.invitation-block__item div');
 	if (!modal) {
 		return false
 	};
+
+
+	
 
 	editBtn.addEventListener('click', (e) => {
 		console.log('object');
@@ -18,7 +22,6 @@ function inviteGuest() {
 	saveBtn.addEventListener('click', function (e) {
 		e.preventDefault();
 
-		let invateBlock = document.querySelectorAll('.invitation-block__item div');
 
 		for (let i = 0; i < invateBlock.length; i++) {
 			if (input[i].value) {
@@ -40,8 +43,10 @@ function inviteGuest() {
 	})
 
 	deleteBtn.addEventListener('click', () => {
+		
 		for (let i = 0; i < input.length; i++) {
 			input[i].value = '';
+			invateBlock[i].innerHTML = starValue[i];
 		};
 
 		setTimeout(() => {
