@@ -6,6 +6,7 @@ window.addEventListener('DOMContentLoaded', function(){
 	let guestSlider = require('../parts/guest_slider.js');
 	let activeNav = require('../parts/active_nav.js');
 	let inviteGuest = require('../parts/invate_guest.js');
+	let wishEdit = require('../parts/wish_edit.js');
 	
 
 	fon();
@@ -13,5 +14,6 @@ window.addEventListener('DOMContentLoaded', function(){
 	// guestSlider();
 	activeNav();
 	inviteGuest();
+	wishEdit();
 	
 });

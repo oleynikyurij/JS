@@ -34,18 +34,23 @@
                 <div class="a-slide-book slide-book-11"></div>
                 <div class="a-slide-book slide-book-12"></div>
                 <div class="a-slide-book slide-book-13"></div>
-              </div>  
-              <div class="book-block__item book-block__item-1" id="first">
+							</div> 
+							
+							<div class="prev-slide"><img src="./images/prev.png" alt = "prev"/></div>
+<div class="next-slide"><img src="./images/next.png" alt = "prev"/></div>
+
+              <div class="book-block__item book-block__item-1 wish-active" id="first">
                 <div class="book-block__pretitle d-flex justify-content-center align-items-center">
                   <div class="line-left"></div>
                   <div>Поздравление</div> 
-                  <div class="line-right"></div>
+									<div class="line-right"></div>
                 </div>
-                <div class="book-block__title">
+								<div class="book-block__text"></div>
+                <div class="book-block__title book-block__text">
                   Поздравляю, дорогие. Хочу вам пожелать долгой и счастливой совместной жизни
                   <!-- Любите крепко, мечтайте красиво, живите роскошно и всегда поддерживайте друг друга! -->
                 </div>
-                <div class="book-block__subtitle">
+                <div class="book-block__subtitle book-block__text">
                   Как важно, чтобы люди находили друг друга, находили свою любовь и половинку! Вы нашли! Я вас поздравляю со свадьбой, с любовью, с новой жизнью! Желаю много очень крепкой, верной, всепобеждающей любви, но и не меньше терпения и смирения! Понимайте друг друга, прощайте друг другу, учитесь быть вместе с радостью в сердце! Приятных вам долгих дней и жарких ночей! Не серых, а цветных будней, ярких выходных и праздников! Детишек вам полный дом и благополучия!
                 </div>
               </div>
@@ -55,11 +60,12 @@
                   <div class="line-left"></div>
                   <div>Пожелание</div>
                   <div class="line-right"></div>
-                </div>
-                <div class="book-block__title">
+								</div>
+								<div class="book-block__text"></div>
+                <div class="book-block__title book-block__text">
                   Любите крепко, мечтайте красиво, живите роскошно и всегда поддерживайте друг друга!
                 </div>
-                <div class="book-block__subtitle">
+                <div class="book-block__subtitle book-block__text">
                   Свои судьбы вы соединили <br>
                   Крепкою любовью, молодые, <br>
                   Счастьем своим солнышко затмили <br>
@@ -71,7 +77,23 @@
               <!-- /.book-block__item -->
             </div>
             <!-- /.book-block -->
-            <div class="book-ellips"></div> 
+            <div class="book-ellips">
+						<div class="slick-book-dots">
+									<div class="slick-book-dot slick-active"></div>
+									<div class="slick-book-dot"></div>
+									<div class="slick-book-dot"></div>
+									<div class="slick-book-dot"></div>
+									<div class="slick-book-dot"></div>
+									<div class="slick-book-dot"></div>
+									<div class="slick-book-dot"></div>
+									<div class="slick-book-dot"></div>
+									<div class="slick-book-dot"></div>
+									<div class="slick-book-dot"></div>
+									<div class="slick-book-dot"></div>
+									<div class="slick-book-dot"></div>
+									<div class="slick-book-dot"></div>
+</div>
+						</div> 
           </div>
           <!-- /.row -->
 
@@ -87,9 +109,9 @@
                   <label class="form-location__label" for="book">
                     Ваше личное пожелание:
                   </label>
-                  <input class="form-box-text" type="text" name="text-input" id="book" placeholder="От кого пожелание" required>
-                  <input class="form-box-text" type="text" name="text-input" id="book-title" placeholder="Заголовок пожелания" required>
-                  <textarea class="form-box-text__wish form-box-text" placeholder="Текст пожелания" required></textarea>
+                  <input class="form-box-text text-wish" type="text" name="text-input" id="book" placeholder="От кого пожелание" required>
+                  <input class="form-box-text text-wish" type="text" name="text-input" id="book-title" placeholder="Заголовок пожелания" required>
+                  <textarea class="form-box-text__wish form-box-text text-wish" placeholder="Текст пожелания" required></textarea>
 
                   <div class="form-box-button">
                     <button class="form-box-button__main button button__big">Отправить</button>
@@ -107,9 +129,9 @@
                   <label class="form-location__label" for="book2">
                     Ваше поздравление:
                   </label>
-                  <input class="form-box-text" type="text" name="text-input" id="book2" placeholder="От кого поздравление" required>
-                  <input class="form-box-text" type="text" name="text-input" id="book-title2" placeholder="Заголовок поздравления" required>
-                  <textarea class="form-box-text__wish form-box-text" placeholder="Текст пожелания" required></textarea>
+                  <input class="form-box-text text-greet" type="text" name="text-input" id="book2" placeholder="От кого поздравление" required>
+                  <input class="form-box-text text-greet" type="text" name="text-input" id="book-title2" placeholder="Заголовок поздравления" required>
+                  <textarea class="form-box-text__wish form-box-text text-greet" placeholder="Текст пожелания" required></textarea>
                   <div class="form-box-button">
                     <button class="form-box-button__main button button__big">Отправить</button>
                   </div>

@@ -3491,10 +3491,11 @@ svg:active {
   font-family: "Museo";
   text-align: center;
   color: #222222;
-  background: url(../img/section6/bg-white.png) no-repeat center;
+	background: url(../img/section6/bg-white.png) no-repeat center;
+	display: none;
 }
 #second {
-  display: none;
+  /* display: none; */
 }
 
 @media (min-width: 48em) and (max-width: 61.99em) {
@@ -3603,8 +3604,8 @@ svg:active {
 .book-ellips {
   width: 1003px;
   height: 35px;
-  margin-top: -15px;
-  margin-bottom: 36px;
+  margin: -12px auto 20px;
+  
   background: url(../img/section6/Ellipse.png) no-repeat center;
   background-size: cover;
 }
@@ -4375,3 +4376,48 @@ svg:active {
 	color: #fff;
 	border-radius:10px;
 }
+
+.wish-active {
+	display: block;
+}
+.slick-book-dots{
+	margin-top: 30px;
+}
+.slick-book-dot {
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+	border-radius: 50%;
+	display: inline-block;
+	background-color: gray;
+	transition: all 1.5s ease;
+	cursor: pointer;
+}
+
+.slick-active {
+	background-color: pink;
+}
+
+.prev-slide  {
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  width: 55px;
+  left: -6%;
+	transition: 0.3s;
+	height: 60px;
+	}
+.next-slide {
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  width: 55px;
+  right: -6%;
+  transition: 0.3s;
+	height: 60px;
+	
+}
+
+
+
+
