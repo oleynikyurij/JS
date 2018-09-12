@@ -3896,9 +3896,11 @@ svg:active {
   overflow: hidden;
   padding-left: 30px;
 	padding-right: 30px;
-	width: 1170px;
-	display: inline-block;
-	position: relative;
+	/* max-width: 1170px; */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	
 }
 
 @media (min-width: 20em) and (max-width: 35.99em) {
