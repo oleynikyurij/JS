@@ -13,6 +13,7 @@
           </div>
           <!-- /.section-subtitle -->
           <div class="row justify-content-center">
+					<div class="guest-relative">
             <div class="image-box-guest" id="slide-guest">
               <div class="image-box-1 image-guest">
                 <img src="img/section7/slider.jpeg" alt>
@@ -33,11 +34,13 @@
               </div>
               <div class="image-box-3 image-guest">
                 <img src="img/section7/slider3.jpeg" alt>
-              </div>  
             </div>
-						<!-- /.slider-album -->
+
 						<div class="prev"  ></div>
 						<div class="next"  ></div>
+					</div>  
+          </div>
+						<!-- /.slider-album -->
           </div>
           <!-- /.row -->
            

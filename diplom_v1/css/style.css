@@ -4445,12 +4445,15 @@ svg:active {
 	border-radius: 50%;
 	border: 2px solid aqua;
 }
+.guest-relative {
+	position: relative;
+}
 .prev {
-	left: 6%;
+	left: 0;
 	background: url('../images/prev.png') -14px center no-repeat;
 }
 .next {
-	right: 8%;
+	right: 0;
 	background: url('../images/next.png') 11px center no-repeat;
 }
 
