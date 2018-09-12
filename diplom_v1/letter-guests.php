@@ -77,7 +77,7 @@
               </label>
               <div class="form-album-input">
                 <input class="form-album-box__text" type="text" name="text-input" id="signature" placeholder="Выберите фото с компьютера" required>
-                <button class="form-album__btn button__big">Обзор</button> 
+                <button class="form-album__btn button__big" type="file">Обзор</button> 
                 <input class="form-album-box__text form-album-box__text-2" type="text" name="text-input" id="signature-photo" placeholder="Или просто перетащите фото сюда" required>
                
               </div>

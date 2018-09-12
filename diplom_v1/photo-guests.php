@@ -13,29 +13,31 @@
           </div>
           <!-- /.section-subtitle -->
           <div class="row justify-content-center">
-            <div class="image-box-guest">
-              <div class="image-box-1">
+            <div class="image-box-guest" id="slide-guest">
+              <div class="image-box-1 image-guest">
                 <img src="img/section7/slider.jpeg" alt>
               </div>
-              <div class="image-box-2">
+              <div class="image-box-2 image-guest">
                 <img src="img/section7/slider2.jpeg" alt>
                 <img src="img/section7/slider2-a.jpeg" alt>
               </div>
-              <div class="image-box-3">
+              <div class="image-box-3 image-guest">
                 <img src="img/section7/slider3.jpeg" alt>
               </div>
-              <div class="image-box-1">
+              <div class="image-box-1 image-guest">
                 <img src="img/section7/slider.jpeg" alt>
               </div>
-              <div class="image-box-2">
+              <div class="image-box-2 image-guest">
                 <img src="img/section7/slider2.jpeg" alt>
                 <img src="img/section7/slider2-a.jpeg" alt>
               </div>
-              <div class="image-box-3">
+              <div class="image-box-3 image-guest">
                 <img src="img/section7/slider3.jpeg" alt>
               </div>  
             </div>
-            <!-- /.slider-album -->
+						<!-- /.slider-album -->
+						<div class="prev"  ></div>
+						<div class="next"  ></div>
           </div>
           <!-- /.row -->
            
