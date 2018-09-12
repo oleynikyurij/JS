@@ -36,9 +36,10 @@
                 <img src="img/section7/slider3.jpeg" alt>
             </div>
 
-						<div class="prev"  ></div>
-						<div class="next"  ></div>
-					</div>  
+						
+					</div> 
+					<div class="prev"></div>
+						<div class="next"></div> 
           </div>
 						<!-- /.slider-album -->
           </div>
