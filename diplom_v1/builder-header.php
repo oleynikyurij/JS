@@ -34,7 +34,8 @@
               <a class="header-main__link" href="#navigation">
                 <span></span>
               </a>
-              <!-- /.header-logo__link --> 
+							<!-- /.header-logo__link --> 
+							<div class="overlay-nav"></div>
               <ul class="header-main-menu">
                 <li>Мои сайты</li>
                 <li>Тарифы и оплата</li>
