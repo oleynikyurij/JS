@@ -508,7 +508,7 @@ input:focus, button:focus, .form-box-text__massege:focus, .slick-slide:focus, .s
     transition: all 0.5s;
   }
   .header-nav-menu_active {
-    left: 0;
+    left: 0 !important;
   }
 }
 

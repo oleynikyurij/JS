@@ -17,7 +17,7 @@
             </div>
             <!-- /.location-button -->
           </div>
-          <div id="mapGoogle" class="location-map"></div>
+          <div id="map" class="location-map"></div>
 
           <form class="form-location">
             <div class="form-location-box">
