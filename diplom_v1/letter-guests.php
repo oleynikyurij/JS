@@ -75,17 +75,27 @@
               <label class="form-location__label" for="signature">
                 Добавить требование:
               </label>
-              <div class="form-album-input">
+              <!-- <div class="form-album-input">
                 <input class="form-album-box__text" type="text" name="text-input" id="signature" placeholder="Выберите фото с компьютера" required>
                 <button class="form-album__btn button__big" type="file">Обзор</button> 
                 <input class="form-album-box__text form-album-box__text-2" type="text" name="text-input" id="signature-photo" placeholder="Или просто перетащите фото сюда" required>
                
-              </div>
+              </div> -->
                <textarea class="form-box-text__signature form-box-text" placeholder="Заголовок требования" required></textarea>
                 <textarea class="form-box-text__signature form-box-text__signature-2 form-box-text" placeholder="Описание требования" required></textarea>
               <button class="form-button__add button button__big">Сохранить</button>
             </div>
-            <!-- /.form-album-box -->
+						<!-- /.form-album-box -->
+				<div class="popup-form-alert">
+					<p>Ваше сообщение</p>
+					<p>отправлено</p>
+					<p>Спасибо!</p>
+				</div>
+				<div class=" popup-form-error">
+					<p>Ваше сообщение</p>
+					<p>Не отправлено</p>
+					<p>Ошибка!</p>
+				</div>
           </form>
           <!-- /.form-album -->
 			    <?php include 'button.php'; ?> 

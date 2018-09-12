@@ -1,5 +1,6 @@
 function mailGuest() {
-		let main = document.getElementsByClassName('form-album form-signature')[0];
+		let main = document.getElementsByClassName('form-album form-signature')[0],
+		box = document.querySelector('.form-album-box');
 
 		if (window.location.pathname != '/letter-guests.php') {
 			return false;
@@ -30,32 +31,30 @@ function mailGuest() {
 			} else if (request.readyState === 4) {
 				if (request.status === 200 && request.status < 300) {
 
-					// formBlock.style.display = 'none';
-					// document.querySelector('.form-group-alert').style.display = 'block';
+					box.style.display = 'none';
+					document.querySelector('.popup-form-alert').style.display = 'block';
 					console.log('ok');
 					//добавляем контент на страницу
 				} else {
 					console.log('not ok');
-					// formBlock.style.display = 'none';
-					// document.querySelector('.form-group-error').style.display = 'block';
+					box.style.display = 'none';
+					document.querySelector('.popup-form-error').style.display = 'block';
 
 				}
 			}
 		};
 
-		//очистка полей формы
-		// for (let i = 0; i < inpt.length; i++) {
-		// 	inpt[i].value = '';
-		// };
+		main.getElementsByTagName('textarea')[0].value = '';
+		main.getElementsByTagName('textarea')[1].value = '';
+		setTimeout(() => {
+			document.querySelector('.popup-form-alert').style.display = 'none';
+			document.querySelector('.popup-form-error').style.display = 'none';
+			box.style.display = 'block';
+		}, 4000);
 	});
 };
 
 module.exports = mailGuest;
-
-
-
-
-
 
 // function encodeImageFileAsURL(element) {
 //   var file = element.files[0];

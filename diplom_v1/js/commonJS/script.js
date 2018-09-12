@@ -1,25 +1,33 @@
-window.addEventListener('DOMContentLoaded', function(){
+"use strict";
 
-	require('babel-polyfill');
-	let  transitionPage = require('../parts/transition_page.js');
-	let  authorizationForm = require('../parts/authorization_form.js');
-	let  formModal = require('../parts/form_modal.js');
-	let  mainForm = require('../parts/main_form.js');
-	let  modalOpen = require('../parts/modal_open.js');
-	let  slider = require('../parts/slider.js');
-	let  smoothScrolling = require('../parts/smooth_scrolling.js');
-	let  tarif = require('../parts/tarif.js');
-	let  videoPlayer = require('../parts/video.js');
-	
-	transitionPage();
-	authorizationForm();
-	formModal();
-	mainForm();
-	modalOpen();
-	slider();
-	smoothScrolling();
-	tarif();
-	videoPlayer();
+window.addEventListener('DOMContentLoaded', function () {
+  require('babel-polyfill');
 
-	
+  var transitionPage = require('../parts/transition_page.js');
+
+  var authorizationForm = require('../parts/authorization_form.js');
+
+  var formModal = require('../parts/form_modal.js');
+
+  var mainForm = require('../parts/main_form.js');
+
+  var modalOpen = require('../parts/modal_open.js');
+
+  var slider = require('../parts/slider.js');
+
+  var smoothScrolling = require('../parts/smooth_scrolling.js');
+
+  var tarif = require('../parts/tarif.js');
+
+  var videoPlayer = require('../parts/video.js');
+
+  transitionPage();
+  authorizationForm();
+  formModal();
+  mainForm();
+  modalOpen();
+  slider();
+  smoothScrolling();
+  tarif();
+  videoPlayer();
 });
