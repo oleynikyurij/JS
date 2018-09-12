@@ -9,6 +9,7 @@ window.addEventListener('DOMContentLoaded', function(){
 	let guestList = require('../parts/guest_list.js');
 	let maps = require('../parts/map.js');
 	let mobailMenu = require('../parts/mobail_menu.js');
+	let mobaileTool = require('../parts/mobaile_tool.js');
 	
 
 	fon();
@@ -19,5 +20,6 @@ window.addEventListener('DOMContentLoaded', function(){
 	guestList();
 	maps();
 	mobailMenu();
+	mobaileTool();
 	
 });
