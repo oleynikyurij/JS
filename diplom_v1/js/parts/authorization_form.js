@@ -30,7 +30,7 @@ function authorizationForm() {
 		} else {
 			//запись в поле маски и отформатированного номера
 			this.value = mask + maskPhone(checkValue(val));
-		};
+		}
 		//запрет на удаление маски номера из поля ввода
 		if (this.value.length == 0) {
 			this.value = mask;

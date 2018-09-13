@@ -7,8 +7,8 @@ function inviteGuest() {
 		starValue = ['Приглашаем Вас на торжество по случаю нашего бракосочетания', 'Андрей и Марина', '23 сентября в 13:00', 'г. Москва, ул. Комсомольская, 37. Ресторан “Прага'];
 		let invateBlock = document.querySelectorAll('.invitation-block__item div');
 	if (!modal) {
-		return false
-	};
+		return false;
+	}
 
 
 	
@@ -32,27 +32,27 @@ function inviteGuest() {
 				for (let j = 0; j < invateBlock.length; j++) {
 					invateBlock[j].innerHTML = starValue[j];
 					input[j].value = '';
-				};
+				}
 				modal.style.display = "none";
 			}
 
-		};
+		}
 		setTimeout(() => {
-			modal.style.display = "none"
+			modal.style.display = "none";
 		}, 1000);
-	})
+	});
 
 	deleteBtn.addEventListener('click', () => {
 		
 		for (let i = 0; i < input.length; i++) {
 			input[i].value = '';
 			invateBlock[i].innerHTML = starValue[i];
-		};
+		}
 
 		setTimeout(() => {
-			modal.style.display = "none"
+			modal.style.display = "none";
 		}, 1000);
 	});
-};
+}
 
 module.exports = inviteGuest;

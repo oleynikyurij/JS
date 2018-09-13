@@ -6,6 +6,6 @@ function transitionPage() {
 	elemBtn.onclick = () => {
 		window.location.pathname = "site-builder.php";
 	};
-};
+}
 
 module.exports = transitionPage;

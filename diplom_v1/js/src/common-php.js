@@ -37,7 +37,7 @@ function activNav() {
 			tabs[i].classList.add('active');
 		}
 	}
-};
+}
 
 module.exports = activNav;
 },{}],3:[function(require,module,exports){
@@ -48,7 +48,7 @@ function fon() {
 		//адhtc увеличенного изображения
 		// urlMaxImage = '../../img/image-max5.jpg';
 	//создаём и размещаем блок для увеличенного фона
-	if(!siteBuilder){ return false;};
+	if(!siteBuilder){ return false;}
 	let divImage = document.createElement('div');
 	divImage.classList.add('close-popup-maxImage');
 	document.body.appendChild(divImage);
@@ -81,7 +81,7 @@ function fon() {
 			divImage.innerHTML = '';
 		}
 	});
-};
+}
 
 module.exports = fon;
 },{}],4:[function(require,module,exports){
@@ -89,7 +89,7 @@ function fotoGuest() {
 
 	if (window.location.pathname != '/photo-guests.php') {
 		return false;
-	};
+	}
 
 	let prev = document.querySelector('.prev'),
 		next = document.querySelector('.next'),
@@ -141,12 +141,12 @@ function guestList() {
 		column = 1;
     if (window.location.pathname != '/guest-list.php') {
 			return false;
-		};
+		}
 	function init(arr, l) {
 		for (let i = 0; i < arr.length; i++) {
 			l[i] = arr[i].textContent;
 		}
-	};
+	}
 	//запоминаем начальный список
 	init(builderPerson1, list1);
 	init(builderPerson2, list2);
@@ -154,7 +154,7 @@ function guestList() {
   //обработчик на поле ввода запрет отправки
 	for (let i = 0; i < input.length; i++) {
 		input[i].addEventListener('keyup', checkGuest);
-		};
+		}
   //запись гостя
 	btnSend.addEventListener('click', (e) => {
 		e.preventDefault();
@@ -166,23 +166,23 @@ function guestList() {
 		switch (column) {
 			case 1:
 			builder1.appendChild(p);
-			column++
+			column++;
 			break;
 			case 2:
 			builder2.appendChild(p);
-			column++
+			column++;
 			break;
 			case 3:
 			builder3.appendChild(p);
-			column++
+			column++;
 			break;
-		};
+		}
 		//проверка номера колонки
 		column = column > 3 ? 1 : column;
 		//очистка полей ввода
 		for (let i = 0; i < input.length; i++) {
 			input[i].value = '';
-		};
+		}
 	});
   //сброс к первоначальному состоянию
 	deleteBtn.addEventListener('click', (e)=> {
@@ -197,19 +197,19 @@ function guestList() {
 		p.innerHTML = list1[i];
 		p.classList.add('builder1-block__text');
 		builder1.appendChild(p);		 
-	 };
+	 }
 	 for (let i = 0; i < list2.length; i++) {
 		let p = document.createElement('p');
 		p.innerHTML = list2[i];
 		p.classList.add('builder2-block__text');
 		builder2.appendChild(p);		 		 
-	 };
+	 }
 	 for (let i = 0; i < list3.length; i++) {
 		 let p = document.createElement('p');
 		p.innerHTML = list3[i];
 		p.classList.add('builder3-block__text');
 		builder3.appendChild(p);		 		 
-	 };
+	 }
 	 //инициализируем счётчик
 	 column = 1;
 	});
@@ -222,7 +222,7 @@ function guestList() {
 		}
 	}
 	
-};
+}
 
 module.exports = guestList;
 },{}],6:[function(require,module,exports){
@@ -235,8 +235,8 @@ function inviteGuest() {
 		starValue = ['Приглашаем Вас на торжество по случаю нашего бракосочетания', 'Андрей и Марина', '23 сентября в 13:00', 'г. Москва, ул. Комсомольская, 37. Ресторан “Прага'];
 		let invateBlock = document.querySelectorAll('.invitation-block__item div');
 	if (!modal) {
-		return false
-	};
+		return false;
+	}
 
 
 	
@@ -260,28 +260,28 @@ function inviteGuest() {
 				for (let j = 0; j < invateBlock.length; j++) {
 					invateBlock[j].innerHTML = starValue[j];
 					input[j].value = '';
-				};
+				}
 				modal.style.display = "none";
 			}
 
-		};
+		}
 		setTimeout(() => {
-			modal.style.display = "none"
+			modal.style.display = "none";
 		}, 1000);
-	})
+	});
 
 	deleteBtn.addEventListener('click', () => {
 		
 		for (let i = 0; i < input.length; i++) {
 			input[i].value = '';
 			invateBlock[i].innerHTML = starValue[i];
-		};
+		}
 
 		setTimeout(() => {
-			modal.style.display = "none"
+			modal.style.display = "none";
 		}, 1000);
 	});
-};
+}
 
 module.exports = inviteGuest;
 },{}],7:[function(require,module,exports){
@@ -292,25 +292,25 @@ function mailGuest() {
 
 	if (window.location.pathname != '/letter-guests.php') {
 		return false;
-	};
+	}
 
 
 	let dropArea = document.getElementById('signature-photo');
 
 	['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-		dropArea.addEventListener(eventName, preventDefaults, false)
+		dropArea.addEventListener(eventName, preventDefaults, false);
 	});
 
 	function preventDefaults(e) {
-		e.preventDefault()
-		e.stopPropagation()
-	};
+		e.preventDefault();
+		e.stopPropagation();
+	}
 
 	['dragenter', 'dragover'].forEach(eventName => {
-		dropArea.addEventListener(eventName, highlight, false)
+		dropArea.addEventListener(eventName, highlight, false);
 	});
 	['dragleave', 'drop'].forEach(eventName => {
-		dropArea.addEventListener(eventName, unhighlight, false)
+		dropArea.addEventListener(eventName, unhighlight, false);
 	});
 
 	function highlight() {
@@ -319,7 +319,7 @@ function mailGuest() {
 
 	function unhighlight() {
 		dropArea.classList.remove('highlight');
-	};
+	}
 
 	dropArea.addEventListener('drop', handleDrop, false);
 
@@ -329,7 +329,7 @@ function mailGuest() {
 		dropArea.classList.add('highlight-gr');
 		dropArea.value = 'файл загружен';
 		previewFile(files);
-	};
+	}
 	// function handleFiles(files) {
 	// 	([...files]).forEach(previewFile);
 
@@ -368,12 +368,12 @@ function mailGuest() {
 
 			img.src = srcData;
 
-		}
+		};
 		fileReader.readAsDataURL(fileToLoad);
 
 
 
-	};
+	}
 	//загрузка через кнопку
 	function previewFileBtn() {
 		//получаем файл 
@@ -394,10 +394,10 @@ function mailGuest() {
 				// document.getElementById("imgTest").innerHTML = newImage.outerHTML;
 				// alert("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
 				
-			}
+			};
 			fileReader.readAsDataURL(fileToLoad);
 		}
-	};
+	}
 	
 	document.getElementById("inputFileToLoad").addEventListener('change', ()=> {previewFileBtn()} );
 	
@@ -449,7 +449,7 @@ function mailGuest() {
 			box.style.display = 'flex';
 		}, 4000);
 	});
-};
+}
 
 module.exports = mailGuest;
 
@@ -465,103 +465,108 @@ module.exports = mailGuest;
 // <input type="file" onchange="encodeImageFileAsURL(this)" />
 },{}],8:[function(require,module,exports){
 function maps() {
-  let tab = document.getElementsByClassName("location-button__map"),
-    // map =	document.getElementById('map'),
-    adress = document.getElementById("adress"),
-    getAdress = document.getElementsByClassName(
-      "form-button__add button button__big"
+	let tab = document.getElementsByClassName("location-button__map"),
+		// map =	document.getElementById('map'),
+		adress = document.getElementById("adress"),
+		getAdress = document.getElementsByClassName(
+			"form-button__add button button__big"
 		)[0];
-		if (window.location.pathname != '/location.html') {
-			return false;
-		};
+	if (window.location.pathname != '/location.html') {
+		return false;
+	}
 
-  //переключение табов
-  for (let i = 0; i < tab.length; i++) {
-    tab[i].addEventListener("click", function() {
-      for (let i = 0; i < tab.length; i++) {
-        tab[i].classList.remove("active-tab");
-        // console.log(tab[i]);
-      }
-			this.classList.add("active-tab");
-			if (tab[i].classList.contains('location-button__map-1') ) {
+	//переключение табов
+	for (let i = 0; i < tab.length; i++) {
+
+		tab[i].addEventListener('click', function () {
+			for (let i = 0; i < tab.length; i++) {
+				tab[i].classList.remove("active-tab");
+				// console.log(tab[i]);
+			}
+			this.classList.add('active-tab');
+			if (this.classList.contains('location-button__map-1')) {
 				//инициализация карты Google
 				initGoogleMap();
-			} else {
+			} else if (this.classList.contains('location-button__map-2')) {
+				//инициализация карты яндекса
 				initYandexMap();
 			}
-    });
-	};
-	initGoogleMap();
-	//создание карты Google
-  function initGoogleMap() {
-    //создаём объект с координатами
-    let myLatlng = new google.maps.LatLng(47.946246, 33.441013);
-    let mapOption = {
-      zoom: 16,
-      //позиционируем карту
-      center: myLatlng,
-      //тип карты
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    //инициализируем карту
-    let map = new google.maps.Map(document.getElementById("map"), mapOption);
-    //маркер
-    let marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: "Место торжества"
-    });
-    let contentString =
-      "<div>Тут будет проходить торжественное мероприятие</div>";
-    let infowindow = new google.maps.InfoWindow({
-      content: contentString
-    });
-    //отображение маркера
-    google.maps.event.addListener(marker, "click", function() {
-      infowindow.open(map, marker);
 		});
-		
+
+	}
+
+	initGoogleMap();
+
+	//создание карты Google
+	function initGoogleMap() {
+		//создаём объект с координатами
+		let myLatlng = new google.maps.LatLng(47.946246, 33.441013);
+		let mapOption = {
+			zoom: 16,
+			//позиционируем карту
+			center: myLatlng,
+			//тип карты
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		//инициализируем карту
+		let map = new google.maps.Map(document.getElementById("map"), mapOption);
+		//маркер
+		let marker = new google.maps.Marker({
+			position: myLatlng,
+			map: map,
+			title: "Место торжества"
+		});
+		let contentString =
+		  "<div>Тут будет проходить торжественное мероприятие</div>";
+		let infowindow = new google.maps.InfoWindow({
+		  content: contentString
+		});
+		//отображение маркера
+		google.maps.event.addListener(marker, 'click', function () {
+			infowindow.open(map, marker);
+		});
+
 		//определение новых координат по адресу
-    let geocoder = new google.maps.Geocoder();
-    getAdress.addEventListener('click', function(e) {
-      e.preventDefault();
+		let geocoder = new google.maps.Geocoder();
+		getAdress.addEventListener('click', function (e) {
+			e.preventDefault();
 			geocodeAdress(geocoder, map);
-			adress.value = '';
-    });
-    function geocodeAdress(geocoder, map) {
-      geocoder.geocode({ 'address': adress.value }, function(result, status) {
-        if (status === "OK") {
-          map.setCenter(result[0].geometry.location);
-          let marker = new google.maps.Marker({
+			
+		});
+
+		function geocodeAdress(geocoder, map) {
+			geocoder.geocode({
+				'address': adress.value
+			}, function (result, status) {
+				if (status === "OK") {
+					map.setCenter(result[0].geometry.location);
+					let marker = new google.maps.Marker({
 						position: result[0].geometry.location,
 						map: map,
 						title: "Место торжества"
-          });
-        } else {
-          console.log(status);
-        }
-      });
-    }
+					});
+				} else {
+					console.log(status);
+				}
+			});
+		}
 	}
 
-	function initYandexMap(){  
+	function initYandexMap() {
 
-		let map= new ymaps.Map("map", {
-				center: [47.946246, 33.441013],
-				zoom: 16
-		}); 
-		
+		let map = new ymaps.Map('map', {
+			center: [47.946246, 33.441013],
+			zoom: 16
+		});
+
 		let mark = new ymaps.Placemark([47.946246, 33.441013]);
 		map.geoObjects.add(mark);
-}
-	
 
+	}
 
-  
 }
 
 module.exports = maps;
-
 },{}],9:[function(require,module,exports){
 function mobailMenu(){
 	let mobaileBtn = document.getElementsByClassName('header-main__link')[0],
@@ -576,12 +581,13 @@ function mobailMenu(){
 	
 	module.exports = mobailMenu;
 },{}],10:[function(require,module,exports){
-function mobaileTool(params) {
+function mobaileTool() {
 	let btnTool = document.querySelector('.navigation__link'),
 	panel = document.querySelector('.navigation'),
 	overlay = document.querySelector('.overlay-nav'),
 	mobaileBtn = document.getElementsByClassName('header-main__link')[0],
 			menu = document.getElementsByClassName('header-main-menu')[0];
+	if(document.body.clientWidth > 768) { return false;}
 
 	btnTool.addEventListener('touchstart', ()=> {
 		
@@ -617,7 +623,7 @@ module.exports = mobaileTool;
 			//создаём элементы картинок
 			preview = document.createElement('img'),
 			playBtn = document.createElement('img');
-			if(!yuotube){ return false;};
+			if(!yuotube){ return false;}
 			//устанавливаем необходимые стили css
 			yuotube.style.cssText += `position: relative; cursor: pointer;`;
 			playBtn.style.cssText = `position: absolute;
@@ -683,21 +689,21 @@ function wishEdit() {
 
 	if (window.location.pathname != '/book-wishes.php') {
 		return false;
-	};
+	}
 	//переключение табов
 	for (let i = 0; i < tab.length; i++) {
 		// console.log(tab);
 		tab[i].addEventListener('click', function () {
 			for (let i = 0; i < tab.length; i++) {
 				tab[i].classList.remove('book-active-tab');
-			};
+			}
 			this.classList.toggle('book-active-tab');
 			//активный таб в соответствии с кнопкой
 			for (let j = 0; j < item.length; j++) {
 				item[j].classList.toggle('wish-active');
 			}
 		});
-	};
+	}
 
 
 	//функция показа слайдов
@@ -778,7 +784,7 @@ function wishEdit() {
 		}
 	}
 
-};
+}
 
 module.exports = wishEdit;
 },{}],13:[function(require,module,exports){

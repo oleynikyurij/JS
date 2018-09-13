@@ -84,7 +84,7 @@
                     <!-- <mark>Файл не выбран</mark> -->
                     <input type="file" id="inputFileToLoad">
                </label> 
-                <input class="form-album-box__text form-album-box__text-2" type="text" name="text-input" id="signature-photo" placeholder="Или просто перетащите фото сюда" readonly>
+                <input class="form-album-box__text form-album-box__text-2" type="text" name="text-input" id="signature-photo" placeholder="Или просто перетащите фото сюда" >
                
               </div>
                <textarea class="form-box-text__signature form-box-text" placeholder="Заголовок требования" required></textarea>

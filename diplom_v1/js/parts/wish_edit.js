@@ -20,21 +20,21 @@ function wishEdit() {
 
 	if (window.location.pathname != '/book-wishes.php') {
 		return false;
-	};
+	}
 	//переключение табов
 	for (let i = 0; i < tab.length; i++) {
 		// console.log(tab);
 		tab[i].addEventListener('click', function () {
 			for (let i = 0; i < tab.length; i++) {
 				tab[i].classList.remove('book-active-tab');
-			};
+			}
 			this.classList.toggle('book-active-tab');
 			//активный таб в соответствии с кнопкой
 			for (let j = 0; j < item.length; j++) {
 				item[j].classList.toggle('wish-active');
 			}
 		});
-	};
+	}
 
 
 	//функция показа слайдов
@@ -115,6 +115,6 @@ function wishEdit() {
 		}
 	}
 
-};
+}
 
 module.exports = wishEdit;

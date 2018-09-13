@@ -8,7 +8,7 @@
 			//создаём элементы картинок
 			preview = document.createElement('img'),
 			playBtn = document.createElement('img');
-			if(!yuotube){ return false;};
+			if(!yuotube){ return false;}
 			//устанавливаем необходимые стили css
 			yuotube.style.cssText += `position: relative; cursor: pointer;`;
 			playBtn.style.cssText = `position: absolute;

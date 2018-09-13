@@ -28,6 +28,6 @@ function modalOpen() {
 				}
 			});
 
-};
+}
 
  module.exports = modalOpen;

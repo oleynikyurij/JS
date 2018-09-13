@@ -20,7 +20,7 @@ function smoothScrolling() {
 			} 
 
 		});
-	};
+	}
 
 	let navigation = document.querySelector('.header-nav-menu');
 

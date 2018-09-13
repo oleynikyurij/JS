@@ -98,7 +98,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       }
     }
 
-    ;
     module.exports = activNav;
   }, {}],
   3: [function (require, module, exports) {
@@ -112,7 +111,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         return false;
       }
 
-      ;
       var divImage = document.createElement('div');
       divImage.classList.add('close-popup-maxImage');
       document.body.appendChild(divImage);
@@ -143,7 +141,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       });
     }
 
-    ;
     module.exports = fon;
   }, {}],
   4: [function (require, module, exports) {
@@ -152,7 +149,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         return false;
       }
 
-      ;
       var prev = document.querySelector('.prev'),
           next = document.querySelector('.next'),
           slider = document.getElementById('slide-guest'),
@@ -200,15 +196,12 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         return false;
       }
 
-      ;
-
       function init(arr, l) {
         for (var i = 0; i < arr.length; i++) {
           l[i] = arr[i].textContent;
         }
-      }
+      } //запоминаем начальный список
 
-      ; //запоминаем начальный список
 
       init(builderPerson1, list1);
       init(builderPerson2, list2);
@@ -216,9 +209,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
       for (var i = 0; i < input.length; i++) {
         input[i].addEventListener('keyup', checkGuest);
-      }
+      } //запись гостя
 
-      ; //запись гостя
 
       btnSend.addEventListener('click', function (e) {
         e.preventDefault();
@@ -242,17 +234,14 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
             builder3.appendChild(p);
             column++;
             break;
-        }
+        } //проверка номера колонки
 
-        ; //проверка номера колонки
 
         column = column > 3 ? 1 : column; //очистка полей ввода
 
         for (var _i = 0; _i < input.length; _i++) {
           input[_i].value = '';
         }
-
-        ;
       }); //сброс к первоначальному состоянию
 
       deleteBtn.addEventListener('click', function (e) {
@@ -269,8 +258,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           builder1.appendChild(p);
         }
 
-        ;
-
         for (var _i3 = 0; _i3 < list2.length; _i3++) {
           var _p = document.createElement('p');
 
@@ -281,8 +268,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           builder2.appendChild(_p);
         }
 
-        ;
-
         for (var _i4 = 0; _i4 < list3.length; _i4++) {
           var _p2 = document.createElement('p');
 
@@ -291,9 +276,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           _p2.classList.add('builder3-block__text');
 
           builder3.appendChild(_p2);
-        }
+        } //инициализируем счётчик
 
-        ; //инициализируем счётчик
 
         column = 1;
       }); //проверка на заполнение полей и блокирование кнопки "добавить"
@@ -307,7 +291,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       }
     }
 
-    ;
     module.exports = guestList;
   }, {}],
   6: [function (require, module, exports) {
@@ -324,7 +307,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         return false;
       }
 
-      ;
       editBtn.addEventListener('click', function (e) {
         console.log('object');
         e.preventDefault();
@@ -344,12 +326,10 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
               input[j].value = '';
             }
 
-            ;
             modal.style.display = "none";
           }
         }
 
-        ;
         setTimeout(function () {
           modal.style.display = "none";
         }, 1000);
@@ -360,14 +340,12 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           invateBlock[i].innerHTML = starValue[i];
         }
 
-        ;
         setTimeout(function () {
           modal.style.display = "none";
         }, 1000);
       });
     }
 
-    ;
     module.exports = inviteGuest;
   }, {}],
   7: [function (require, module, exports) {
@@ -380,7 +358,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         return false;
       }
 
-      ;
       var dropArea = document.getElementById('signature-photo');
       ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(function (eventName) {
         dropArea.addEventListener(eventName, preventDefaults, false);
@@ -391,7 +368,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         e.stopPropagation();
       }
 
-      ;
       ['dragenter', 'dragover'].forEach(function (eventName) {
         dropArea.addEventListener(eventName, highlight, false);
       });
@@ -407,7 +383,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         dropArea.classList.remove('highlight');
       }
 
-      ;
       dropArea.addEventListener('drop', handleDrop, false);
 
       function handleDrop(e) {
@@ -416,9 +391,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         dropArea.classList.add('highlight-gr');
         dropArea.value = 'файл загружен';
         previewFile(files);
-      }
-
-      ; // function handleFiles(files) {
+      } // function handleFiles(files) {
       // 	([...files]).forEach(previewFile);
       // };
       // function uploadFile(file) {
@@ -440,6 +413,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       // 	}
       // };
 
+
       function previewFile(f) {
         var fileToLoad = f[0];
         var fileReader = new FileReader();
@@ -451,9 +425,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         };
 
         fileReader.readAsDataURL(fileToLoad);
-      }
+      } //загрузка через кнопку
 
-      ; //загрузка через кнопку
 
       function previewFileBtn() {
         //получаем файл 
@@ -477,7 +450,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         }
       }
 
-      ;
       document.getElementById("inputFileToLoad").addEventListener('change', function () {
         previewFileBtn();
       }); // обработчик на отправку формы авторизации
@@ -526,7 +498,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       });
     }
 
-    ;
     module.exports = mailGuest; // function encodeImageFileAsURL(element) {
     //   var file = element.files[0];
     //   var reader = new FileReader();
@@ -546,33 +517,28 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
       if (window.location.pathname != '/location.html') {
         return false;
-      }
+      } //переключение табов
 
-      ; //переключение табов
 
-      var _loop = function _loop(i) {
-        tab[i].addEventListener("click", function () {
+      for (var i = 0; i < tab.length; i++) {
+        tab[i].addEventListener('click', function () {
           for (var _i5 = 0; _i5 < tab.length; _i5++) {
             tab[_i5].classList.remove("active-tab"); // console.log(tab[i]);
 
           }
 
-          this.classList.add("active-tab");
+          this.classList.add('active-tab');
 
-          if (tab[i].classList.contains('location-button__map-1')) {
+          if (this.classList.contains('location-button__map-1')) {
             //инициализация карты Google
             initGoogleMap();
-          } else {
+          } else if (this.classList.contains('location-button__map-2')) {
+            //инициализация карты яндекса
             initYandexMap();
           }
         });
-      };
-
-      for (var i = 0; i < tab.length; i++) {
-        _loop(i);
       }
 
-      ;
       initGoogleMap(); //создание карты Google
 
       function initGoogleMap() {
@@ -598,7 +564,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           content: contentString
         }); //отображение маркера
 
-        google.maps.event.addListener(marker, "click", function () {
+        google.maps.event.addListener(marker, 'click', function () {
           infowindow.open(map, marker);
         }); //определение новых координат по адресу
 
@@ -606,7 +572,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         getAdress.addEventListener('click', function (e) {
           e.preventDefault();
           geocodeAdress(geocoder, map);
-          adress.value = '';
         });
 
         function geocodeAdress(geocoder, map) {
@@ -629,7 +594,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       }
 
       function initYandexMap() {
-        var map = new ymaps.Map("map", {
+        var map = new ymaps.Map('map', {
           center: [47.946246, 33.441013],
           zoom: 16
         });
@@ -653,12 +618,17 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     module.exports = mobailMenu;
   }, {}],
   10: [function (require, module, exports) {
-    function mobaileTool(params) {
+    function mobaileTool() {
       var btnTool = document.querySelector('.navigation__link'),
           panel = document.querySelector('.navigation'),
           overlay = document.querySelector('.overlay-nav'),
           mobaileBtn = document.getElementsByClassName('header-main__link')[0],
           menu = document.getElementsByClassName('header-main-menu')[0];
+
+      if (document.body.clientWidth > 768) {
+        return false;
+      }
+
       btnTool.addEventListener('touchstart', function () {
         btnTool.classList.toggle('navigation__link_active');
         panel.classList.toggle('navigation_active');
@@ -689,9 +659,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
       if (!yuotube) {
         return false;
-      }
+      } //устанавливаем необходимые стили css
 
-      ; //устанавливаем необходимые стили css
 
       yuotube.style.cssText += "position: relative; cursor: pointer;";
       playBtn.style.cssText = "position: absolute;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t top: 45%;\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t left: 45%;";
@@ -750,9 +719,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
       if (window.location.pathname != '/book-wishes.php') {
         return false;
-      }
+      } //переключение табов
 
-      ; //переключение табов
 
       for (var i = 0; i < tab.length; i++) {
         // console.log(tab);
@@ -761,16 +729,14 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
             tab[_i6].classList.remove('book-active-tab');
           }
 
-          ;
           this.classList.toggle('book-active-tab'); //активный таб в соответствии с кнопкой
 
           for (var j = 0; j < item.length; j++) {
             item[j].classList.toggle('wish-active');
           }
         });
-      }
+      } //функция показа слайдов
 
-      ; //функция показа слайдов
 
       var showSlides = function showSlides(n) {
         if (n > slidesWish.length) {
@@ -855,7 +821,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       }
     }
 
-    ;
     module.exports = wishEdit;
   }, {}],
   13: [function (require, module, exports) {

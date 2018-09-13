@@ -5,7 +5,7 @@ function fon() {
 		//адhtc увеличенного изображения
 		// urlMaxImage = '../../img/image-max5.jpg';
 	//создаём и размещаем блок для увеличенного фона
-	if(!siteBuilder){ return false;};
+	if(!siteBuilder){ return false;}
 	let divImage = document.createElement('div');
 	divImage.classList.add('close-popup-maxImage');
 	document.body.appendChild(divImage);
@@ -38,6 +38,6 @@ function fon() {
 			divImage.innerHTML = '';
 		}
 	});
-};
+}
 
 module.exports = fon;

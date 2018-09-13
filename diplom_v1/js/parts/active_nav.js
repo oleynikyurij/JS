@@ -6,6 +6,6 @@ function activNav() {
 			tabs[i].classList.add('active');
 		}
 	}
-};
+}
 
 module.exports = activNav;

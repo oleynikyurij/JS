@@ -62,7 +62,7 @@ function mainForm() {
 		//очистка полей формы
 		for (let i = 0; i < inpt.length; i++) {
 			inpt[i].value = '';
-		};
+		}
 		main.getElementsByTagName('textarea')[0].value = '';
 		setTimeout(() => {
 			document.querySelector('.form-group-alert').style.display = 'none';

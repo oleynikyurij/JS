@@ -5,25 +5,25 @@ function mailGuest() {
 
 	if (window.location.pathname != '/letter-guests.php') {
 		return false;
-	};
+	}
 
 
 	let dropArea = document.getElementById('signature-photo');
 
 	['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-		dropArea.addEventListener(eventName, preventDefaults, false)
+		dropArea.addEventListener(eventName, preventDefaults, false);
 	});
 
 	function preventDefaults(e) {
-		e.preventDefault()
-		e.stopPropagation()
-	};
+		e.preventDefault();
+		e.stopPropagation();
+	}
 
 	['dragenter', 'dragover'].forEach(eventName => {
-		dropArea.addEventListener(eventName, highlight, false)
+		dropArea.addEventListener(eventName, highlight, false);
 	});
 	['dragleave', 'drop'].forEach(eventName => {
-		dropArea.addEventListener(eventName, unhighlight, false)
+		dropArea.addEventListener(eventName, unhighlight, false);
 	});
 
 	function highlight() {
@@ -32,7 +32,7 @@ function mailGuest() {
 
 	function unhighlight() {
 		dropArea.classList.remove('highlight');
-	};
+	}
 
 	dropArea.addEventListener('drop', handleDrop, false);
 
@@ -42,7 +42,7 @@ function mailGuest() {
 		dropArea.classList.add('highlight-gr');
 		dropArea.value = 'файл загружен';
 		previewFile(files);
-	};
+	}
 	// function handleFiles(files) {
 	// 	([...files]).forEach(previewFile);
 
@@ -81,12 +81,12 @@ function mailGuest() {
 
 			img.src = srcData;
 
-		}
+		};
 		fileReader.readAsDataURL(fileToLoad);
 
 
 
-	};
+	}
 	//загрузка через кнопку
 	function previewFileBtn() {
 		//получаем файл 
@@ -107,10 +107,10 @@ function mailGuest() {
 				// document.getElementById("imgTest").innerHTML = newImage.outerHTML;
 				// alert("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
 				
-			}
+			};
 			fileReader.readAsDataURL(fileToLoad);
 		}
-	};
+	}
 	
 	document.getElementById("inputFileToLoad").addEventListener('change', ()=> {previewFileBtn()} );
 	
@@ -162,7 +162,7 @@ function mailGuest() {
 			box.style.display = 'flex';
 		}, 4000);
 	});
-};
+}
 
 module.exports = mailGuest;
 

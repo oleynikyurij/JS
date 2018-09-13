@@ -2,7 +2,7 @@ function fotoGuest() {
 
 	if (window.location.pathname != '/photo-guests.php') {
 		return false;
-	};
+	}
 
 	let prev = document.querySelector('.prev'),
 		next = document.querySelector('.next'),

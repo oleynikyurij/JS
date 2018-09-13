@@ -1,9 +1,10 @@
-function mobaileTool(params) {
+function mobaileTool() {
 	let btnTool = document.querySelector('.navigation__link'),
 	panel = document.querySelector('.navigation'),
 	overlay = document.querySelector('.overlay-nav'),
 	mobaileBtn = document.getElementsByClassName('header-main__link')[0],
 			menu = document.getElementsByClassName('header-main-menu')[0];
+	if(document.body.clientWidth > 768) { return false;}
 
 	btnTool.addEventListener('touchstart', ()=> {
 		

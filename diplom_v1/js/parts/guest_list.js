@@ -16,12 +16,12 @@ function guestList() {
 		column = 1;
     if (window.location.pathname != '/guest-list.php') {
 			return false;
-		};
+		}
 	function init(arr, l) {
 		for (let i = 0; i < arr.length; i++) {
 			l[i] = arr[i].textContent;
 		}
-	};
+	}
 	//запоминаем начальный список
 	init(builderPerson1, list1);
 	init(builderPerson2, list2);
@@ -29,7 +29,7 @@ function guestList() {
   //обработчик на поле ввода запрет отправки
 	for (let i = 0; i < input.length; i++) {
 		input[i].addEventListener('keyup', checkGuest);
-		};
+		}
   //запись гостя
 	btnSend.addEventListener('click', (e) => {
 		e.preventDefault();
@@ -41,23 +41,23 @@ function guestList() {
 		switch (column) {
 			case 1:
 			builder1.appendChild(p);
-			column++
+			column++;
 			break;
 			case 2:
 			builder2.appendChild(p);
-			column++
+			column++;
 			break;
 			case 3:
 			builder3.appendChild(p);
-			column++
+			column++;
 			break;
-		};
+		}
 		//проверка номера колонки
 		column = column > 3 ? 1 : column;
 		//очистка полей ввода
 		for (let i = 0; i < input.length; i++) {
 			input[i].value = '';
-		};
+		}
 	});
   //сброс к первоначальному состоянию
 	deleteBtn.addEventListener('click', (e)=> {
@@ -72,19 +72,19 @@ function guestList() {
 		p.innerHTML = list1[i];
 		p.classList.add('builder1-block__text');
 		builder1.appendChild(p);		 
-	 };
+	 }
 	 for (let i = 0; i < list2.length; i++) {
 		let p = document.createElement('p');
 		p.innerHTML = list2[i];
 		p.classList.add('builder2-block__text');
 		builder2.appendChild(p);		 		 
-	 };
+	 }
 	 for (let i = 0; i < list3.length; i++) {
 		 let p = document.createElement('p');
 		p.innerHTML = list3[i];
 		p.classList.add('builder3-block__text');
 		builder3.appendChild(p);		 		 
-	 };
+	 }
 	 //инициализируем счётчик
 	 column = 1;
 	});
@@ -97,6 +97,6 @@ function guestList() {
 		}
 	}
 	
-};
+}
 
 module.exports = guestList;
