@@ -75,12 +75,18 @@
               <label class="form-location__label" for="signature">
                 Добавить требование:
               </label>
-              <!-- <div class="form-album-input">
-                <input class="form-album-box__text" type="text" name="text-input" id="signature" placeholder="Выберите фото с компьютера" required>
-                <button class="form-album__btn button__big" type="file">Обзор</button> 
-                <input class="form-album-box__text form-album-box__text-2" type="text" name="text-input" id="signature-photo" placeholder="Или просто перетащите фото сюда" required>
+              <div class="form-album-input">
+                <input class="form-album-box__text" type="text" name="text-input" id="signature" placeholder="Выберите фото с компьютера" disabled>
+								<!-- <p class="form-album-box__text">Выберите фото с компьютера</p> -->
+                <!-- <button class="form-album__btn button__big" >Обзор</button> -->
+								<label class="file_upload form-album__btn button__big button">
+                  <span class="text-file">Обзор</span> 
+                    <!-- <mark>Файл не выбран</mark> -->
+                    <input type="file" id="inputFileToLoad">
+               </label> 
+                <input class="form-album-box__text form-album-box__text-2" type="text" name="text-input" id="signature-photo" placeholder="Или просто перетащите фото сюда" >
                
-              </div> -->
+              </div>
                <textarea class="form-box-text__signature form-box-text" placeholder="Заголовок требования" required></textarea>
                 <textarea class="form-box-text__signature form-box-text__signature-2 form-box-text" placeholder="Описание требования" required></textarea>
               <button class="form-button__add button button__big">Сохранить</button>

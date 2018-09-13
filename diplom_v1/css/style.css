@@ -4460,3 +4460,45 @@ svg:active {
 }
 
 
+.file_upload{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    font-size: 15px;              /* example */
+    height:55px;                 /* example */
+    
+}
+.file_upload .button, .file_upload > mark{
+    display: block;
+    cursor: pointer;              /* example */
+}
+.file_upload .button{
+		display: flex;
+		justify-content: center;
+		vertical-align: middle;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 55px;                  /* example */
+    height: 100%;
+    text-align: center;           /* example */
+}
+.file_upload > mark{
+    background: transparent;     /* example */
+    padding-left: 1em;            /* example */
+}
+
+.file_upload input[type=file]{
+    position: absolute;
+    top: 0;
+    opacity: 0;
+}
+.text-file {
+	display: block;
+	color: palevioletred;
+}
+.highlight {
+	border: 2px solid purple;
+}
+.highlight-gr {
+	border: 2px solid green;
+}

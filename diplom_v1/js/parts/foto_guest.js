@@ -22,7 +22,7 @@ function fotoGuest() {
 
 		let obj = itemSlide[((x < 0) ? 0 : (itemSlide.length - 1))],
 			clone = obj.cloneNode(1);
-		console.log(obj, clone, x);
+		// console.log(obj, clone, x);
 		if (x < 0) {
 			slider.appendChild(clone);
 		} else {
