@@ -37,7 +37,7 @@
 							</div> 
 							
 							<div class="prev-slide"><img src="./images/prev.png" alt = "prev"/></div>
-<div class="next-slide"><img src="./images/next.png" alt = "prev"/></div>
+							<div class="next-slide"><img src="./images/next.png" alt = "prev"/></div>
 
               <div class="book-block__item book-block__item-1 wish-active" id="first">
                 <div class="book-block__pretitle d-flex justify-content-center align-items-center">
@@ -78,21 +78,21 @@
             </div>
             <!-- /.book-block -->
             <div class="book-ellips">
-						<div class="slick-book-dots">
-									<div class="slick-book-dot slick-active"></div>
-									<div class="slick-book-dot"></div>
-									<div class="slick-book-dot"></div>
-									<div class="slick-book-dot"></div>
-									<div class="slick-book-dot"></div>
-									<div class="slick-book-dot"></div>
-									<div class="slick-book-dot"></div>
-									<div class="slick-book-dot"></div>
-									<div class="slick-book-dot"></div>
-									<div class="slick-book-dot"></div>
-									<div class="slick-book-dot"></div>
-									<div class="slick-book-dot"></div>
-									<div class="slick-book-dot"></div>
-</div>
+								<div class="slick-book-dots">
+											<div class="slick-book-dot slick-active"></div>
+											<div class="slick-book-dot"></div>
+											<div class="slick-book-dot"></div>
+											<div class="slick-book-dot"></div>
+											<div class="slick-book-dot"></div>
+											<div class="slick-book-dot"></div>
+											<div class="slick-book-dot"></div>
+											<div class="slick-book-dot"></div>
+											<div class="slick-book-dot"></div>
+											<div class="slick-book-dot"></div>
+											<div class="slick-book-dot"></div>
+											<div class="slick-book-dot"></div>
+											<div class="slick-book-dot"></div>
+								</div>
 						</div> 
           </div>
           <!-- /.row -->

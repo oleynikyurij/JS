@@ -205,10 +205,28 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
       init(builderPerson1, list1);
       init(builderPerson2, list2);
-      init(builderPerson3, list3); //обработчик на поле ввода запрет отправки
+      init(builderPerson3, list3);
 
       for (var i = 0; i < input.length; i++) {
-        input[i].addEventListener('keyup', checkGuest);
+        input[i].addEventListener('keypress', function () {
+          var nameValue = this.value; //проверка на пустую строку
+
+          if (nameValue != null && nameValue != '') {
+            //проверка на русские буквы
+            if (/(^[А-Я]{1}([а-я]{0,20})?$)/.test(nameValue)) {
+              //если русская бкува записываем				
+              this.value = nameValue; // console.log(this, nameValue);
+            } else {
+              //если нет удаляем введённый символ
+              this.value = nameValue.substr(0, nameValue.length - 1);
+            }
+          }
+        });
+      } //обработчик на поле ввода запрет отправки
+
+
+      for (var _i = 0; _i < input.length; _i++) {
+        input[_i].addEventListener('keyup', checkGuest);
       } //запись гостя
 
 
@@ -239,8 +257,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
         column = column > 3 ? 1 : column; //очистка полей ввода
 
-        for (var _i = 0; _i < input.length; _i++) {
-          input[_i].value = '';
+        for (var _i2 = 0; _i2 < input.length; _i2++) {
+          input[_i2].value = '';
         }
       }); //сброс к первоначальному состоянию
 
@@ -251,27 +269,27 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         builder2.innerHTML = '';
         builder3.innerHTML = ''; //записываем сохранённые данные по колонкам (надо сделать функцию.... потом:))))
 
-        for (var _i2 = 0; _i2 < list1.length; _i2++) {
+        for (var _i3 = 0; _i3 < list1.length; _i3++) {
           var p = document.createElement('p');
-          p.innerHTML = list1[_i2];
+          p.innerHTML = list1[_i3];
           p.classList.add('builder1-block__text');
           builder1.appendChild(p);
         }
 
-        for (var _i3 = 0; _i3 < list2.length; _i3++) {
+        for (var _i4 = 0; _i4 < list2.length; _i4++) {
           var _p = document.createElement('p');
 
-          _p.innerHTML = list2[_i3];
+          _p.innerHTML = list2[_i4];
 
           _p.classList.add('builder2-block__text');
 
           builder2.appendChild(_p);
         }
 
-        for (var _i4 = 0; _i4 < list3.length; _i4++) {
+        for (var _i5 = 0; _i5 < list3.length; _i5++) {
           var _p2 = document.createElement('p');
 
-          _p2.innerHTML = list3[_i4];
+          _p2.innerHTML = list3[_i5];
 
           _p2.classList.add('builder3-block__text');
 
@@ -288,7 +306,21 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         } else {
           btnSend.disabled = false;
         }
-      }
+      } // nameForm.addEventListener('keypress', () => {
+      // 	nameFormValue = nameForm.value;
+      // 	//проверка на пустую строку
+      // 	if ((nameFormValue != null) && (nameFormValue != '')) {
+      // 		//проверка на русские буквы
+      // 		if (/(^[А-Я]{1}([а-я]{0,14})?( )?$)|(^[А-Я]{1}([а-я]{0,13})? [А-Я]{1}([а-я]{0,12})?$)/.test(nameFormValue)) {
+      // 			//если русская бкува записываем				
+      // 			nameForm.value = nameFormValue;
+      // 		} else {
+      // 			//если нет удаляем введённый символ
+      // 			nameForm.value = nameFormValue.substr(0, nameFormValue.length - 1);
+      // 		}
+      // 	}
+      // });
+
     }
 
     module.exports = guestList;
@@ -522,8 +554,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
       for (var i = 0; i < tab.length; i++) {
         tab[i].addEventListener('click', function () {
-          for (var _i5 = 0; _i5 < tab.length; _i5++) {
-            tab[_i5].classList.remove("active-tab"); // console.log(tab[i]);
+          for (var _i6 = 0; _i6 < tab.length; _i6++) {
+            tab[_i6].classList.remove("active-tab"); // console.log(tab[i]);
 
           }
 
@@ -725,8 +757,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       for (var i = 0; i < tab.length; i++) {
         // console.log(tab);
         tab[i].addEventListener('click', function () {
-          for (var _i6 = 0; _i6 < tab.length; _i6++) {
-            tab[_i6].classList.remove('book-active-tab');
+          for (var _i7 = 0; _i7 < tab.length; _i7++) {
+            tab[_i7].classList.remove('book-active-tab');
           }
 
           this.classList.toggle('book-active-tab'); //активный таб в соответствии с кнопкой
@@ -747,12 +779,12 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           slideIndex = slidesWish.length;
         }
 
-        for (var _i7 = 0; _i7 < slidesWish.length; _i7++) {
-          slidesWish[_i7].style.display = 'none';
+        for (var _i8 = 0; _i8 < slidesWish.length; _i8++) {
+          slidesWish[_i8].style.display = 'none';
         }
 
-        for (var _i8 = 0; _i8 < dots.length; _i8++) {
-          dots[_i8].classList.remove('slick-active');
+        for (var _i9 = 0; _i9 < dots.length; _i9++) {
+          dots[_i9].classList.remove('slick-active');
         }
 
         slidesWish[slideIndex - 1].style.display = 'block';
@@ -781,9 +813,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         plusSlides(1);
       });
       dotsWrap.addEventListener('click', function (e) {
-        for (var _i9 = 0; _i9 <= dots.length; _i9++) {
-          if (e.target.classList.contains('slick-book-dot') && e.target == dots[_i9 - 1]) {
-            currentSlide(_i9);
+        for (var _i10 = 0; _i10 <= dots.length; _i10++) {
+          if (e.target.classList.contains('slick-book-dot') && e.target == dots[_i10 - 1]) {
+            currentSlide(_i10);
           }
         }
       });
@@ -799,24 +831,24 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         resetText(inputGreet);
       });
       resetBtn.addEventListener('click', function () {
-        for (var _i10 = 0; _i10 < wishDefault.length; _i10++) {
-          textWish[_i10].innerHTML = wishDefault[_i10];
+        for (var _i11 = 0; _i11 < wishDefault.length; _i11++) {
+          textWish[_i11].innerHTML = wishDefault[_i11];
         }
 
-        for (var _i11 = 0; _i11 < greetsDefault.length; _i11++) {
-          textGreet[_i11].innerHTML = greetsDefault[_i11];
+        for (var _i12 = 0; _i12 < greetsDefault.length; _i12++) {
+          textGreet[_i12].innerHTML = greetsDefault[_i12];
         }
       });
 
       function setText(input, text) {
-        for (var _i12 = 0; _i12 < input.length; _i12++) {
-          text[_i12].innerHTML = input[_i12].value;
+        for (var _i13 = 0; _i13 < input.length; _i13++) {
+          text[_i13].innerHTML = input[_i13].value;
         }
       }
 
       function resetText(input) {
-        for (var _i13 = 0; _i13 < input.length; _i13++) {
-          input[_i13].value = '';
+        for (var _i14 = 0; _i14 < input.length; _i14++) {
+          input[_i14].value = '';
         }
       }
     }

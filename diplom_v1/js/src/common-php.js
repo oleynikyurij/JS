@@ -151,6 +151,25 @@ function guestList() {
 	init(builderPerson1, list1);
 	init(builderPerson2, list2);
 	init(builderPerson3, list3);
+	for (let i = 0; i < input.length; i++) {
+		input[i].addEventListener('keypress', function() {
+			
+		let	nameValue = this.value;
+			//проверка на пустую строку
+			if ((nameValue != null) && (nameValue != '')) {
+				//проверка на русские буквы
+				if (/(^[А-Я]{1}([а-я]{0,20})?$)/.test(nameValue)) {
+					//если русская бкува записываем				
+					this.value = nameValue;
+					// console.log(this, nameValue);
+				} else {
+					//если нет удаляем введённый символ
+					this.value = nameValue.substr(0, nameValue.length - 1);
+				}
+			}
+		});
+		
+	}
   //обработчик на поле ввода запрет отправки
 	for (let i = 0; i < input.length; i++) {
 		input[i].addEventListener('keyup', checkGuest);
@@ -221,6 +240,23 @@ function guestList() {
 			btnSend.disabled = false;
 		}
 	}
+	
+
+
+	// nameForm.addEventListener('keypress', () => {
+	// 	nameFormValue = nameForm.value;
+	// 	//проверка на пустую строку
+	// 	if ((nameFormValue != null) && (nameFormValue != '')) {
+	// 		//проверка на русские буквы
+	// 		if (/(^[А-Я]{1}([а-я]{0,14})?( )?$)|(^[А-Я]{1}([а-я]{0,13})? [А-Я]{1}([а-я]{0,12})?$)/.test(nameFormValue)) {
+	// 			//если русская бкува записываем				
+	// 			nameForm.value = nameFormValue;
+	// 		} else {
+	// 			//если нет удаляем введённый символ
+	// 			nameForm.value = nameFormValue.substr(0, nameFormValue.length - 1);
+	// 		}
+	// 	}
+	// });
 	
 }
 
